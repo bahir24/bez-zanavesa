@@ -10,7 +10,7 @@ html(lang="en")
   body
     .wrapper
       .maincontent
-        .hero
+        section.hero
           header.header            
             .container.container-header
               .logo
@@ -63,13 +63,23 @@ html(lang="en")
                           link: 'https://insta'
                       }
                     ]
-                  each social in socials
+                  each social in socials                    
                     li.socials__item
                       a(href=`${social.link}`).socials__link 
                         +icon(`${social.name}`, 'socials__icon')
           .container.slider-container
             .slider
-              .slider__images
+              .slider__images                
                 ul.slider__list
-                  li.slider__item.active
-
+                  - for (var i = 1; i < 4; i++)
+                    li.slider__item
+                      +image(`slider/${i}.jpg`, 'slider__image')
+                ul.slider__buttons
+                  - for (var i = 0; i < 2; i++)
+                    li.slider__button
+                      a.slider__arrow
+                ul.slider__points
+                  - for (var i = 0; i < 3; i++)
+                    li.slider__point
+                      a.slider__point-btn
+        section.poster
