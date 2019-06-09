@@ -69,17 +69,17 @@ html(lang="en")
                         +icon(`${social.name}`, 'socials__icon')
           .container.slider-container
             .slider
-              .slider__images                
-                ul.slider__list
+              .slider-images                
+                ul.slider-images__list
                   - for (var i = 1; i < 4; i++)
-                    li.slider__item
-                      +image(`slider/${i}.jpg`, 'slider__image')
-              ul.slider__buttons
+                    li.slider-images__item
+                      +image(`slider/${i}.jpg`, 'slider-images__image')
+              ul.slider-buttons
                 - for (var i = 0; i < 2; i++)
-                  li.slider__button
-                    a.slider__arrow
-              ul.slider__points
+                  li.slider-buttons__button
+                    a.slider-buttons__arrow
+              ul.slider-points
                 - for (var i = 0; i < 3; i++)
-                  li.slider__point
-                    a.slider__point-btn
+                  li.slider-points__point
+                    a.slider-points__point-btn
         section.poster
