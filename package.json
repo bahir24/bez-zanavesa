@@ -1,15 +1,17 @@
 {
-  "name": "ls-advanced-boilerplate",
-  "version": "1.0.0",
-  "description": "",
+  "name": "bez-zanavesa",
+  "version": "1.0.1",
+  "description": "for theatre",
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server --mode=development --hot",
     "build": "rm -rf dist && webpack --mode=production --progress",
     "reg": "node reg-util.js"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "theatre"
+  ],
+  "author": "Mikhail_Bakhirev <7074033@gmail.com>",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.3.3",
@@ -45,7 +47,10 @@
     "webpack-dev-server": "^3.2.0"
   },
   "browserslist": [
-    "last 2 versions"
+    "last 1 version",
+    "> 1%",
+    "maintained node versions",
+    "not dead"
   ],
   "dependencies": {
     "normalize.css": "^8.0.1",
@@ -55,5 +60,10 @@
     "signale": "^1.4.0",
     "vue": "^2.6.7",
     "vue-router": "^3.0.2"
-  }
+  },
+  "repository": "git+https://github.com/bahir24/bez-zanavesa.git",
+  "bugs": {
+    "url": "https://github.com/bahir24/bez-zanavesa/issues"
+  },
+  "homepage": "https://github.com/bahir24/bez-zanavesa#readme"
 }

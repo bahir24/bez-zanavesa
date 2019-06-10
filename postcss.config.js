@@ -2,13 +2,12 @@ const fs = require("fs");
 
 module.exports = {
   syntax: "postcss-scss",
-  parser: 'postcss-scss',
+  parser: "postcss-scss",
   plugins: [
     require("postcss-easy-import")({
       extensions: ".pcss"
     }),
-    require("autoprefixer")({
-      browsers: ["last 2 versions"],
+    require('autoprefixer')({
       cascade: false
     }),
     require("postcss-advanced-variables")({
