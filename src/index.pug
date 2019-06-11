@@ -75,8 +75,10 @@ html(lang="en")
                     li.slider-images__item
                       +image(`slider/${i}.jpg`, 'slider-images__image')
               ul.slider-buttons
-                - for (var i = 0; i < 2; i++)
-                  li.slider-buttons__button
+                - 
+                  var btns= ['left', 'right']
+                each btn in btns                  
+                  li.slider-buttons__button(class=`slider-buttons__button-${btn}`)
                     a.slider-buttons__arrow
               ul.slider-points
                 - for (var i = 0; i < 3; i++)
