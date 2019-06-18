@@ -85,8 +85,7 @@ module.exports = (env, argv) => {
 
   const config = {
     entry: {
-      main: "./src/main.js",
-      admin: "./src/admin/main.js"
+      main: "./src/main.js"      
     },
     output: {
       path: path.resolve(__dirname, "./dist"),
@@ -116,12 +115,7 @@ module.exports = (env, argv) => {
       new HtmlWebpackPlugin({
         template: "src/index.pug",
         chunks: ["main"]
-      }),
-      new HtmlWebpackPlugin({
-        template: "src/admin/index.pug",
-        filename: "admin/index.html",
-        chunks: ["admin"]
-      }),
+      }),      
       new SpriteLoaderPlugin({ plainSprite: true }),
       new VueLoaderPlugin()
     ],
