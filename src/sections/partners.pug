@@ -1,0 +1,9 @@
+section.partners
+          .container
+            h2.section-head.section-head--partners Друзья и партнеры
+            .friends
+              ul.friends__list
+                - for (var i = 1; i < 5; i++)
+                  li.friends__item
+                    .friends__item-avatar
+                      +image(`partners/${i}.jpg`, '.friends__item-avatar')

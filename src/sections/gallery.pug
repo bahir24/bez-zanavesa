@@ -1,0 +1,52 @@
+section.gallery
+          .container
+            h2.section-head Галерея
+            ul.photos
+              - 
+                var photos= [
+                  { 
+                    link: '',
+                    value: '1'
+                  },{
+                    link: '',
+                    value: '2'
+                  },{
+                    link: '',
+                    value: '3'
+                  },{
+                    link: '',
+                    value: '4'
+                  },{
+                    link: '',
+                    value: '5'
+                  },{
+                    link: '',
+                    value: '6'
+                  },{
+                    link: '',
+                    value: '7'
+                  },{
+                    link: '',
+                    value: '8'
+                  },{
+                    link: '',
+                    value: '9'
+                  },{
+                    link: '',
+                    value: '10'
+                  },{
+                    link: '',
+                    value: '11'
+                  },{
+                    link: '',
+                    value: '12'
+                  }
+                  //- },{
+                  //-   link: '#',
+                  //-   value: '13'
+                  //- }
+                ]                              
+              each photo in photos
+                li.photos__item
+                  a(href=`${photo.link}`).photos__item-link
+                    +image(`gallery/${photo.value}.jpg`, 'photos__item-pic')
