@@ -5,9 +5,20 @@
 }
 
 .opinions__item {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: space-between;
   width: 20%;
   margin-right: 2%;
   margin-bottom: 40px;
+
+  @include tablets {
+    width: 48%;
+  }
+
+  @include phones {
+    width: 96%;
+  }
 }
 
 .opinions__item-text {

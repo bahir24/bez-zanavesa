@@ -10,12 +10,24 @@
     margin-bottom: 20px;
     text-transform: none;
     font-size: 40px;
+
+    @include tablets {
+      margin-bottom: 150px;
+    }
+
+    @include phones {
+      font-size: 25px;
+      margin-bottom: 15px;
+
+    }
   }
 
   &--partners {
     margin-bottom: 80px;
   }
+
   &--centered {
     text-align: center;
   }
+
 }

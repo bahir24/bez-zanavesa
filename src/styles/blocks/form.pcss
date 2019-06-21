@@ -1,6 +1,11 @@
 .form {
   // height: 100%;
   text-align: center;
+  margin-bottom: 5%;
+
+  @include tablets {
+    margin-bottom: 10%;
+  }
 }
 
 .form__rows {
@@ -10,6 +15,10 @@
   align-items: center;
   margin-bottom: 15px;
   height: 100%;
+
+  @include tablets {
+    margin-bottom: 30px;
+  }
 }
 
 .form__row {
@@ -24,6 +33,11 @@
   height: 60px;
   border: 1px solid #000;
   background: #fff;
+
+  @include phones {
+    height: 33px;
+    font-size: 16px;
+  }
 }
 
 .form__row-head {

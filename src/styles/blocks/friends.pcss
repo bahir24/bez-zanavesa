@@ -8,6 +8,10 @@
   display: flex;
   // justify-content: space-between;
   width: 80%;
+
+  @include phones {
+    flex-direction: column;
+  }
 }
 
 .friends__item {
@@ -18,4 +22,18 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
+  &:last-child {
+    border-right: none;
+  }
+
+  @include phones {
+    width: 96%;
+    border-right: none;
+    border-bottom: 1px solid #e8d8e8;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
 }

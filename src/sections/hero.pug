@@ -1,10 +1,14 @@
 section.hero
           header.header            
             .container.container-header
-              .logo
-                +image('logo/logo.png', logo-pic)
-              nav.nav
-                ul.nav__list
+              a.burger-menu
+                .burger-menu__bars
+              nav.screen-menu
+                a.screen-menu__close
+                  .screen-menu__close-dagger
+                .logo.logo--screen
+                  +image('logo/logo.png', logo-pic)
+                ul.screen-menu__list
                   - 
                     var items= [ 
                       {
@@ -31,47 +35,80 @@ section.hero
                       }
                     ]
                   each item in items                       
-                    li.nav__item
-                      a(href=`${item.link}`).nav__link #{item.name}
-              .socials
-                ul.socials__list
+                    li.screen-menu__item
+                      a(href=`${item.link}`).screen-menu__link #{item.name}
+              .header__wrapper
+                .logo
+                  +image('logo/logo.png', logo-pic)
+                nav.nav
+                  ul.nav__list
+                    - 
+                      var items= [ 
+                        {
+                            name: 'о театре',
+                            link: '#about'
+                        },{
+                            name: 'афиша',
+                            link: '#poster'
+                        },{
+                            name: 'репертуар',
+                            link: '#repertoire'
+                        },{
+                            name: 'труппа театра',
+                            link: '#team'
+                        },{
+                            name: 'отзывы',
+                            link: '#reviews'
+                        },{
+                            name: 'контакты',
+                            link: '#contacts'
+                        },{
+                            name: 'заказать звонок',
+                            link: '#call'
+                        }
+                      ]
+                    each item in items                       
+                      li.nav__item
+                        a(href=`${item.link}`).nav__link #{item.name}
+                .socials
+                  ul.socials__list
+                    - 
+                      var socials= [ 
+                        {
+                            name: 'fb',
+                            link: 'https://www.facebook.com/bezzanavesa'
+                        },{
+                            name: 'vk',
+                            link: 'https://vk.com/bezzanavesa'
+                        },{
+                            name: 'youtube',
+                            link: 'https://www.youtube.com/channel/UC_8d8MYU-WXwnmb0Rs_qPig'
+                        },{
+                            name: 'insta',
+                            link: 'https://www.instagram.com/bezzanavesa'
+                        }
+                      ]
+                    each social in socials                    
+                      li.socials__item
+                        a(
+                          href=`${social.link}`
+                          target="_blank"
+                          ).socials__link 
+                          +icon(`${social.name}`, 'socials__icon')
+            .container.slider-container
+              .slider
+                .slider-images                
+                  ul.slider-images__list
+                    - for (var i = 1; i < 4; i++)                    
+                      li.slider-images__item
+                        +image(`slider/${i}.jpg`, 'slider-images__image')
+                ul.slider-buttons
                   - 
-                    var socials= [ 
-                      {
-                          name: 'fb',
-                          link: 'https://www.facebook.com/bezzanavesa'
-                      },{
-                          name: 'vk',
-                          link: 'https://vk.com/bezzanavesa'
-                      },{
-                          name: 'youtube',
-                          link: 'https://www.youtube.com/channel/UC_8d8MYU-WXwnmb0Rs_qPig'
-                      },{
-                          name: 'insta',
-                          link: 'https://www.instagram.com/bezzanavesa'
-                      }
-                    ]
-                  each social in socials                    
-                    li.socials__item
-                      a(
-                        href=`${social.link}`
-                        target="_blank"
-                        ).socials__link 
-                        +icon(`${social.name}`, 'socials__icon')
-          .container.slider-container
-            .slider
-              .slider-images                
-                ul.slider-images__list
-                  - for (var i = 1; i < 4; i++)                    
-                    li.slider-images__item
-                      +image(`slider/${i}.jpg`, 'slider-images__image')
-              ul.slider-buttons
-                - 
-                  var btns= ['left', 'right']
-                each btn in btns                  
-                  li.slider-buttons__button(class=`slider-buttons__button-${btn}`)
-                    a.slider-buttons__arrow
-              ul.slider-points
-                - for (var i = 0; i < 3; i++)
-                  li.slider-points__point
-                    a.slider-points__point-btn
+                    var btns= ['left', 'right']
+                  each btn in btns                  
+                    li.slider-buttons__button(class=`slider-buttons__button-${btn}`)
+                      a.slider-buttons__arrow
+                ul.slider-points
+                  - for (var i = 0; i < 3; i++)
+                    li.slider-points__point
+                      a.slider-points__point-btn

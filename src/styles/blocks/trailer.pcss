@@ -1,5 +1,8 @@
 .trailer {
   display: flex;
+  @include tablets {
+    flex-direction: column;
+  }
 }
 
 
@@ -8,6 +11,9 @@
 .trailer__video {
   width: 50%;
   padding: 2%;
+  @include tablets {
+    width: 100%;
+  }
 }
 
 .trailer__description-head {
