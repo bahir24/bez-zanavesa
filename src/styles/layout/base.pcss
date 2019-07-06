@@ -20,7 +20,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: $text-color;
-  scroll-behavior: smooth;
+  // scroll-behavior: smooth;
 }
 
 .wrapper {
@@ -48,6 +48,9 @@ section {
 
   &:first-child {
     padding-top: 0;
+  }
+  @include phones {
+    padding: 10px 0;
   }
 }
 

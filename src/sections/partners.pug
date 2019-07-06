@@ -3,7 +3,26 @@ section.partners
             h2.section-head.section-head--partners Друзья и партнеры
             .friends
               ul.friends__list
-                - for (var i = 1; i < 5; i++)
+                - 
+                  var partners= [
+                    { 
+                      link: 'https://elaginpark.org/events/1780-rozhdestvenskie-vstrechi-na-elaginom-2018',
+                      value: '1'
+                    },{
+                      link: 'http://museumdolls.ru/',
+                      value: '2'
+                    },{
+                      link: 'http://theatremuseum.ru/filial/dom_muzey_shalyapina',
+                      value: '3'
+                    },{
+                      link: 'https://www.spbmuseum.ru/themuseum/museum_complex/blok_museum/',
+                      value: '4'
+                    }
+                  ]
+                each partner in partners
                   li.friends__item
-                    .friends__item-avatar
-                      +image(`partners/${i}.jpg`, '.friends__item-avatar')
+                    a(
+                      href=`${partner.link}`
+                      target='_blank'
+                    ).friends__item-link
+                      +image(`partners/${partner.value}.jpg`, '.friends__item-avatar')

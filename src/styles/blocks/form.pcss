@@ -6,6 +6,9 @@
   @include tablets {
     margin-bottom: 10%;
   }
+  @include phones {
+    margin-bottom: 5px;
+  }
 }
 
 .form__rows {
@@ -19,12 +22,18 @@
   @include tablets {
     margin-bottom: 30px;
   }
+  @include phones {
+    margin-bottom: 0;
+  }
 }
 
 .form__row {
   list-style-type: none;
   width: 50%;
   margin-bottom: 20px;
+  @include phones {
+  margin-bottom: 10px;
+  }
 }
 
 .form__row-input {

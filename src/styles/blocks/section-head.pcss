@@ -12,22 +12,29 @@
     font-size: 40px;
 
     @include tablets {
-      margin-bottom: 150px;
-    }
-
-    @include phones {
-      font-size: 25px;
-      margin-bottom: 15px;
-
+      margin-bottom: 100px;
     }
   }
 
   &--partners {
     margin-bottom: 80px;
+
+    @include phones {
+      margin-bottom: 0;
+    }
   }
 
   &--centered {
     text-align: center;
   }
 
+  @include tablets {
+    font-size: 35px;
+    margin-bottom: 10px;
+  }
+
+  @include phones {
+    font-size: 30px;
+    margin-bottom: 5px;
+  }
 }
