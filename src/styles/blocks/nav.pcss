@@ -1,5 +1,8 @@
 .nav {
-  width: 70%;
+  width: 100%;
+  @include tablets {
+    display:none;
+  }
 }
 
 .nav__list {
@@ -9,6 +12,7 @@
 }
 
 .nav__item {
+  // margin-right: 2%;
   &:last-child {
     margin-right: 0;
   }

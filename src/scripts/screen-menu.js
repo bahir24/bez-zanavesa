@@ -1,6 +1,6 @@
 var menu = document.querySelector('.screen-menu');
-var burger = document.querySelector('.burger-menu');
-var close = document.querySelector('.screen-menu__close');
+var burger = document.querySelector('.burger');
+var close = document.querySelector('.close');
 burger.addEventListener('click', function (event) {
   event.preventDefault();
   menu.classList.add('menu__active');

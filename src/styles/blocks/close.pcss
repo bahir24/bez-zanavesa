@@ -1,0 +1,27 @@
+.close {
+  // position: absolute;
+  // top: 4vh;
+  // right: 3vh;
+  align-self: flex-end;
+  height: 4vh;
+  width: 4vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.close__link-dagger {
+  background: #fff;
+  height: 1vh;
+  width: 4vh;
+  transform: rotate(45deg);
+
+  &::before {
+    content: '';
+    display: block;
+    height: 1vh;
+    width: 4vh;
+    background: #fff;
+    transform: rotate(90deg);
+  }
+}
