@@ -1,7 +1,7 @@
 .trailer {
   display: flex;
   @include tablets {
-    flex-direction: column;
+    flex-direction: column-reverse;
   }
 }
 
@@ -13,6 +13,7 @@
   padding: 2%;
   @include tablets {
     width: 100%;
+    padding: 0;
   }
 }
 
@@ -21,15 +22,37 @@
   font-weight: 600;
   color: #000;
   margin-bottom: 20px;
+  @include tablets {
+   margin-bottom: 5px;
+  }
 }
 
 .trailer-description-text {
   text-align: justify;
   font-size: 20px;
   line-height: 1.55;
+  @include tablets {
+    font-size: 15px;
+    margin-bottom: 10px;
+   }
+  @include phones {
+    font-size: 15px;
+    max-height: 5vh;
+    transition: max-height 1s;
+    overflow: hidden;
+    &:hover {
+      max-height: 20vh;
+    }
+  }
 }
 
 .trailer__video-clip {
   width: 100%;
-  height: 45vh;
+  min-height: 350px;
+  @include tablets {
+    min-height: 400px;
+  }
+  @include phones {
+  min-height: 250px;
+  }
 }
