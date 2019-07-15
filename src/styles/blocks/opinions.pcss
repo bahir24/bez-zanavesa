@@ -23,8 +23,16 @@
 
 .opinions__item-text {
   text-align: justify;
-  font-size: 15px;
   margin-bottom: 20px;
+  font-size: 16px;
+
+  @include tablets {
+    font-size: 14px;
+  }
+
+  @include phones {
+    font-size: 12px;
+  }
 }
 
 .opinions__item-link {
@@ -32,7 +40,7 @@
 }
 
 .opinions__item-name {
-  font-size: 16px;
+  // font-size: 16px;
   font-weight: 600;
   color: #ff8562;
 }
