@@ -10,6 +10,7 @@ section.feedback
               form(                
                 method="post"
                 action="msg.php"
+                name="feedback"
               ).form
                 ul.form__rows
                   - 
@@ -18,54 +19,65 @@ section.feedback
                           name: 'E-mail',
                           type: 'input',
                           placeholder: 'Ваш E-mail',
-                          element: 'email'
+                          element: 'email',
+                          datatype: 'email',
+                          //- pattern: ''
                       },{
                           name: 'Имя',
                           type: 'input',
                           placeholder: 'Имя',
-                          element: 'name'                     
+                          element: 'name',
+                          datatype: 'text',
+                          //- pattern: ''
                       },{
                           name: 'Телефон',
                           type: 'input',
                           placeholder: 'Номер телефона',
-                          element: 'tel'                     
+                          element: 'tel',
+                          datatype: 'number',
+                          //- patern: '/^[\d]{10}\'
                       },{
                           name: 'Вы бы хотели...',
                           type: 'select',
                           placeholder: 'Выберете желаемую услугу',
-                          element: 'services'
+                          element: 'services',
+                          datatype: 'text',
+                          //- pattern: ''
                       }
                     ]
                   each row in rows                   
                     li.form__row
                       label.form__row-label
-                        h4.form__row-head #{row.name}
-                        #{row.type}(
-                          placeholder=`${row.placeholder}`
-                          name=`${row.element}`
-                          ).form__row-input
-                            - 
-                              var options= [
-                                { 
-                                  opt: 'Выберете желаемую услугу',
-                                  value: ''                                  
-                                },{ 
-                                  opt: 'Купить билет на текущие спектакли',
-                                  value: '1'
-                                },{
-                                  opt: 'Заказать спектакль',
-                                  value: '2'
-                                },{
-                                  opt: 'Пригласить на гастроли',
-                                  value: '3'
-                                },{
-                                  opt: 'Подписаться на рассылку новостей и получить подарок',
-                                  value: '4'
-                                }
-                              ]                              
-                            each option in options
-                              if row.type == 'select'                            
-                                option(color="#fff" value=`${option.value}`).form__option #{option.opt}     
+                        h4.form__row-head #{row.name}                          
+                          #{row.type}(
+                            type=`${row.datatype}`                            
+                            placeholder=`${row.placeholder}`
+                            name=`${row.element}`                          
+                            required
+                            ).form__row-input                        
+                              - 
+                                var options= [
+                                  { 
+                                    opt: 'Выберете желаемую услугу',
+                                    value: ''                                  
+                                  },{ 
+                                    opt: 'Купить билет на текущие спектакли',
+                                    value: '1'
+                                  },{
+                                    opt: 'Заказать спектакль',
+                                    value: '2'
+                                  },{
+                                    opt: 'Пригласить на гастроли',
+                                    value: '3'
+                                  },{
+                                    opt: 'Подписаться на рассылку новостей и получить подарок',
+                                    value: '4'
+                                  }
+                                ]                              
+                              each option in options
+                                if row.type == 'select'                            
+                                  option(color="#fff" value=`${option.value}`).form__option #{option.opt}
+                          .error
                 button().btn.btn--form Отправить заявку
               .docs
                 a(href="https://docs.google.com/document/d/1ZPKdL-mzzU7N5YcQu2DJHHkAGjxvuYqolwmLFsPl6jA/edit?usp=sharing").docs__link

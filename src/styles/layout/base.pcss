@@ -1,12 +1,5 @@
 html {
   scroll-behavior: smooth;
-  @include desktop {
-    font-size: 15px;
-  }
-
-  @include tablets {
-    font-size: 14px;
-  }
 }
 
 body,
@@ -17,11 +10,22 @@ html {
 body {
   font-family: 'Open Sans', Helvetica, sans-serif;
   font-size: 16px;
-  line-height: 1.42;
+  line-height: 1.55;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: $text-color;
-  
+
+  @include desktop {
+    font-size: 15px;
+  }
+
+  @include tablets {
+    font-size: 14px;
+  }
+
+  @include phones {
+    font-size: 12px;
+  }
 }
 
 .wrapper {
