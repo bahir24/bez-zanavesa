@@ -1,27 +1,42 @@
 .opinions__list {
+  height: 75vh;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  @include phones {
+    height: unset;    
+  }
 }
 
 .opinions__item {
   display: inline-flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 20%;
-  margin-right: 2%;
-  margin-bottom: 40px;
+  width: 25%;
+  height: 50%;
+  max-height: 500px;
+  transition: max-height 5s;
+  padding: 1.5%;
 
+  &:hover {
+    max-height: 900px;
+    height: unset;
+  }
+ 
   @include tablets {
-    width: 48%;
+    width: 50%;
+    height: 25%;
   }
 
   @include phones {
     width: 96%;
+    height: 20vh;
   }
 }
 
 .opinions__item-text {
+  overflow: hidden;
+  line-height: 20px;
   text-align: justify;
   margin-bottom: 20px;
   font-size: 16px;
