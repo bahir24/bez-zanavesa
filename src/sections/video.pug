@@ -1,6 +1,6 @@
 section.video
           .container
-            h2.section-head Видео со спектаклей
+            h2.section-head Видео спектаклей
             .event-video
               ul.event-video__list
                 - 
@@ -22,8 +22,8 @@ section.video
                 each event in events                    
                   li.event-video__item                    
                     .trailer
-                      .trailer__description
+                      .trailer__left
                         h3.trailer__description-head #{event.name}
+                        iframe(class="trailer__video-clip" src=`${event.link}` frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)                        
+                      .trailer__right
                         p.trailer-description-text #{event.description}
-                      .trailer__video
-                        iframe(class="trailer__video-clip" src=`${event.link}` frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)

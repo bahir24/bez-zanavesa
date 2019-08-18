@@ -17,67 +17,74 @@ section.feedback
                     var rows= [ 
                       {
                           name: 'E-mail',
-                          type: 'input',
+                          tag: 'input',
                           placeholder: 'Ваш E-mail',
                           element: 'email',
                           datatype: 'email',
                           //- pattern: ''
                       },{
                           name: 'Имя',
-                          type: 'input',
+                          tag: 'input',
                           placeholder: 'Имя',
                           element: 'name',
                           datatype: 'text',
                           //- pattern: ''
                       },{
                           name: 'Телефон',
-                          type: 'input',
+                          tag: 'input',
                           placeholder: 'Номер телефона',
                           element: 'tel',
                           datatype: 'number',
                           //- patern: '/^[\d]{10}\'
                       },{
                           name: 'Вы бы хотели...',
-                          type: 'select',
+                          tag: 'select',
                           placeholder: 'Выберете желаемую услугу',
                           element: 'services',
                           datatype: 'text',
                           //- pattern: ''
+                      },{
+                          name: 'Ваше сообщение успешно отправлено',
+                          tag: ''                          
                       }
                     ]
                   each row in rows                   
                     li.form__row
-                      label.form__row-label
-                        h4.form__row-head #{row.name}                          
-                          #{row.type}(
-                            type=`${row.datatype}`                            
-                            placeholder=`${row.placeholder}`
-                            name=`${row.element}`                          
-                            required
-                            ).form__row-input                        
-                              - 
-                                var options= [
-                                  { 
-                                    opt: 'Выберете желаемую услугу',
-                                    value: ''                                  
-                                  },{ 
-                                    opt: 'Купить билет на текущие спектакли',
-                                    value: '1'
-                                  },{
-                                    opt: 'Заказать спектакль',
-                                    value: '2'
-                                  },{
-                                    opt: 'Пригласить на гастроли',
-                                    value: '3'
-                                  },{
-                                    opt: 'Подписаться на рассылку новостей и получить подарок',
-                                    value: '4'
-                                  }
-                                ]                              
-                              each option in options
-                                if row.type == 'select'                            
-                                  option(color="#fff" value=`${option.opt}`).form__option #{option.opt}
-                          .error
+                      if row.tag != ''
+                        label.form__row-label
+                          h4.form__row-head #{row.name}                          
+                            #{row.tag}(
+                              type=`${row.datatype}`                            
+                              placeholder=`${row.placeholder}`
+                              name=`${row.element}`                          
+                              required
+                              ).form__row-input                        
+                                - 
+                                  var options= [
+                                    { 
+                                      opt: 'Выберете желаемую услугу',
+                                      value: ''                                  
+                                    },{ 
+                                      opt: 'Купить билет на текущие спектакли',
+                                      value: '1'
+                                    },{
+                                      opt: 'Заказать спектакль',
+                                      value: '2'
+                                    },{
+                                      opt: 'Пригласить на гастроли',
+                                      value: '3'
+                                    },{
+                                      opt: 'Подписаться на рассылку новостей и получить подарок',
+                                      value: '4'
+                                    }
+                                  ]                              
+                                each option in options
+                                  if row.tag == 'select'                            
+                                    option(color="#fff" value=`${option.opt}`).form__option #{option.opt}
+                            .error
+                      else
+                        h4.form__sent-head #{row.name}
+                        button.btn.btn__text.btn__other Отправить еще одно
                 button().btn.btn--form Отправить заявку
               .docs
                 a(href="https://docs.google.com/document/d/1ZPKdL-mzzU7N5YcQu2DJHHkAGjxvuYqolwmLFsPl6jA/edit?usp=sharing").docs__link
