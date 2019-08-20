@@ -1,7 +1,5 @@
 .contacts {
-  // height: 100vh;
   width: 100%;
-  // background-color: #f2eded;
 }
 
 .contacts__head {
@@ -19,7 +17,7 @@
   margin-bottom: 10px;
   display: flex;
 
-  @include phones {
+  @include tablets {
     margin-bottom: 5px;
   }
 }
@@ -28,23 +26,11 @@
 .contacts__item-name,
 .contacts__item-call {
   display: inline-block;
-  font-size: 16px;
-
-  // @include tablets {
-  //   font-size: 14px;
-  // }
-
-  @include phones {
-    font-size: 10px;
-  }
+  font-size: 1em;
 }
 
 .contacts__item-call {
-
-  display: flex;
-  fill: #fff;
-  // justify-content: center;
-  // align-items: center;
+  width: 35%;
 }
 
 .contacts__item-link {
@@ -76,37 +62,37 @@
 
 .contacts__item-head {
   font-weight: 600;
-  width: 27%;
-
+  width: 50%;
+  margin-right: auto;
   &:after {
     content: ':';
   }
 
-  @include tablets {
-    width: 35%;
-    // font-weight: 300;
-  }
+  // @include tablets {
+  //   width: 35%;
+  //   // font-weight: 300;
+  // }
 
-  @include phones {
-    width: 45%;
-    font-weight: 300;
-  }
+  // @include phones {
+  //   width: 45%;
+  //   font-weight: 300;
+  // }
 }
 
 .contacts__item-name {
   // font-size: 16px;
-  width: 12%;
+  width: 15%;
 
-  @include tablets {
-    text-align: right;
-    margin-right: 15px;
-    width: 15%;
-  }
+  // @include tablets {
+  //   text-align: right;
+  //   margin-right: 15px;
+  //   width: 15%;
+  // }
 
-  @include phones {
-    // width: 50%;
-    // font-weight: 300;
-    width: 20%;
-    margin-right: 5px;
-  }
+  // @include phones {
+  //   // width: 50%;
+  //   // font-weight: 300;
+  //   width: 20%;
+  //   margin-right: 5px;
+  // }
 }
