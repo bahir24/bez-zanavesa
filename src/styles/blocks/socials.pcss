@@ -8,9 +8,11 @@
   &--footer {
     height: 30%;
     display: block;
+
     @include tablets {
       height: 100%;
     }
+
     @include phones {
       display: none;
     }
@@ -34,6 +36,7 @@
     width: 23%;
     margin-right: 2%;
     height: 100%;
+
     @include tablets {
       width: 50%;
       height: 25%;
@@ -52,6 +55,7 @@
   display: block;
   height: 60%;
   min-height: 35px;
+  min-width: 35px;
   fill: #fff;
   opacity: .5;
   transition: opacity 0.5s;

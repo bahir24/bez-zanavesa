@@ -3,8 +3,9 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  overflow: hidden;
   @include phones {
-    height: unset;    
+    height: unset;
   }
 }
 
@@ -15,14 +16,16 @@
   width: 25%;
   height: 50%;
   max-height: 500px;
-  transition: max-height 5s;
+  transition: max-height 2s;
   padding: 1.5%;
 
   &:hover {
+    background: #fff;
+    // position: relative;
     max-height: 900px;
     height: unset;
   }
- 
+
   @include tablets {
     width: 50%;
     height: 25%;
@@ -39,14 +42,10 @@
   line-height: 20px;
   text-align: justify;
   margin-bottom: 20px;
-  font-size: 16px;
-
-  @include tablets {
-    font-size: 14px;
-  }
+  font-size: 1em;
 
   @include phones {
-    font-size: 12px;
+    font-size: 1.2em;
   }
 }
 
@@ -55,7 +54,6 @@
 }
 
 .opinions__item-name {
-  // font-size: 16px;
   font-weight: 600;
   color: #ff8562;
 }
