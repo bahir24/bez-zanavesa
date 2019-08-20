@@ -26,4 +26,5 @@ section.video
                         h3.trailer__description-head #{event.name}
                         iframe(class="trailer__video-clip" src=`${event.link}` frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)                        
                       .trailer__right
-                        p.trailer-description-text #{event.description}
+                        .trailer-description-about
+                          p.trailer-description-text #{event.description}

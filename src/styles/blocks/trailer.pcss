@@ -1,6 +1,6 @@
 .trailer {
   display: flex;
-
+  position: relative;
   @include tablets {
     flex-direction: column;
   }
@@ -38,10 +38,20 @@
   }
 }
 
+.trailer-description-about {
+  @include phones {
+    width: 100%;
+    height: 4.5em;
+    overflow: hidden;
+  }
+}
+
 .trailer-description-text {
+  position: absolute;
   text-align: justify;
   font-size: 20px;
   line-height: 1.55;
+  
 
   @include tablets {
     font-size: 15px;
@@ -49,13 +59,17 @@
   }
 
   @include phones {
-    font-size: 15px;
-    max-height: 6vh;
+    font-size: 1.5em;
+    line-height: unset;
+    max-height: 3em;
     transition: max-height 1s;
     overflow: hidden;
+    margin-bottom: 0;
+    z-index: 10;
+    background: #fff;
 
     &:hover {
-      max-height: 100vh;
+      max-height: 100em;
     }
   }
 }
