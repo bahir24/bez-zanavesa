@@ -14,9 +14,11 @@
   background: #fff;
   margin-bottom: 30px;
   padding: 2%;
+
   @include tablets {
     width: 48%;
   }
+
   @include phones {
     width: 96%;
   }
@@ -32,7 +34,7 @@
 
 .perfomances__item-name {
   display: block;
-  font-size: 18px;
+  font-size: 1.7em;
   color: #ff0101;
   margin-bottom: 25px;
   font-weight: 700;
@@ -41,6 +43,10 @@
 .perfomances__item-description {
   display: block;
   margin-bottom: 25px;
+
+  @include phones {
+    font-size: 1.5em;
+  }
 }
 
 .perfomances__item-buttons {

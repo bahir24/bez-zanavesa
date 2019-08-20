@@ -1,100 +1,69 @@
 .socials {
-  display: flex;
-  align-items: center;
   height: 100%;
-  width: 100%;
-
-  &--footer {
-    height: 60%;
-
-    .socials__list {
-      align-items: center;
-    }
-    @include desktop {
-      height: 80%;
-    }
-  }
 
   @include tablets {
     display: none;
   }
 
+  &--footer {
+    height: 30%;
+    display: block;
 
+    @include tablets {
+      height: 100%;
+    }
 
-  &--contacts {
-    justify-content: center;
-
-    .socials__list {
-      .socials__item {
-        .socials__link {
-          .socials__icon {
-            fill: #000;
-            opacity: 1;
-          }
-        }
-      }
+    @include phones {
+      display: none;
     }
   }
+
 }
 
 .socials__list {
-  display: flex;
-  width: 100%;
+  font-size: 0; //убираем отступы между блоками
   height: 100%;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  @include desktop {
-    flex-direction: column;
-  }
+  width: 100%;
+  text-align: center;
 }
 
 .socials__item {
   display: inline-block;
-  width: 49%;
+  width: 50%;
   height: 50%;
-
-  &:nth-child(2n-1) {
-    .socials__link {
-      justify-content: flex-end;
-    }
-  }
 
   &--row {
     width: 23%;
+    margin-right: 2%;
+    height: 100%;
 
-    &:nth-child(2n-1) {
-      .socials__link {
-        justify-content: center;
-      }
-    }
-
-    .socials__link {
-      justify-content: center;
-    }
-
-    @include desktop {
-      display: block;
-      width: 100%;
-      height: 23%;
+    @include tablets {
+      width: 50%;
+      height: 25%;
     }
   }
-
 }
 
 .socials__link {
   display: flex;
-  flex-direction: row;
-  // justify-content: flex-end;
+  justify-content: center;
   align-items: center;
-  width: 100%;
   height: 100%;
 }
 
 .socials__icon {
-  height: 80%;
+  display: block;
+  height: 60%;
+  min-height: 35px;
+  min-width: 35px;
   fill: #fff;
   opacity: .5;
   transition: opacity 0.5s;
+
+  @include tablets {
+    min-height: 30px;
+    min-width: 30px;
+  }
 
   &:hover {
     opacity: 1;

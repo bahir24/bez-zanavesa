@@ -5,6 +5,15 @@
   }
 }
 
+.nav__mobile {
+  display: none;
+  color: #fff;
+  font-weight: bold;
+  @include tablets {
+    display: inline;
+  }
+}
+
 .nav__list {
   display: flex;
   align-items: center;
@@ -12,7 +21,6 @@
 }
 
 .nav__item {
-  // margin-right: 2%;
   &:last-child {
     margin-right: 0;
   }

@@ -1,29 +1,40 @@
 .trailer {
   display: flex;
+
   @include tablets {
-    flex-direction: column-reverse;
+    flex-direction: column;
   }
 }
 
 
 
-.trailer__description,
-.trailer__video {
+.trailer__right,
+.trailer__left {
   width: 50%;
   padding: 2%;
+
   @include tablets {
     width: 100%;
     padding: 0;
   }
 }
 
+.trailer__right {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
 .trailer__description-head {
   font-size: 20px;
   font-weight: 600;
   color: #000;
   margin-bottom: 20px;
+
   @include tablets {
-   margin-bottom: 5px;
+    margin-bottom: 5px;
   }
 }
 
@@ -31,17 +42,20 @@
   text-align: justify;
   font-size: 20px;
   line-height: 1.55;
+
   @include tablets {
     font-size: 15px;
     margin-bottom: 10px;
-   }
+  }
+
   @include phones {
     font-size: 15px;
-    max-height: 5vh;
+    max-height: 6vh;
     transition: max-height 1s;
     overflow: hidden;
+
     &:hover {
-      max-height: 20vh;
+      max-height: 100vh;
     }
   }
 }
@@ -49,10 +63,12 @@
 .trailer__video-clip {
   width: 100%;
   min-height: 350px;
+
   @include tablets {
     min-height: 400px;
   }
+
   @include phones {
-  min-height: 250px;
+    min-height: 250px;
   }
 }

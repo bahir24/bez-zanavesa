@@ -37,14 +37,15 @@ footer.footer
                 ]
               each contact in contacts                       
                 li.contacts__item
-                      h5.contacts__item-head #{contact.position}
-                      h6.contacts__item-name #{contact.name}
-                      .contacts__item-call                        
-                        a(
-                          href=`${contact.type}: ${contact.link}`
-                        ).contacts__item-link #{contact.text}
-                          .contacts__item-icon
-                            +icon(`${contact.type}`, 'contacts__item-pic')
+                  h5.contacts__item-head #{contact.position}
+                  if contact.name !== ''
+                    h6.contacts__item-name #{contact.name}
+                  .contacts__item-call                        
+                    a(
+                      href=`${contact.type}: ${contact.link}`
+                    ).contacts__item-link #{contact.text}
+                      .contacts__item-icon
+                        +icon(`${contact.type}`, 'contacts__item-pic')
       .footer__col-right
         .socials.socials--footer
           ul.socials__list
@@ -71,4 +72,3 @@ footer.footer
                   target="_blank"
                   ).socials__link 
                   +icon(`${social.name}`, 'socials__icon')
-      

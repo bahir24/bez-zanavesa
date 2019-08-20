@@ -1,7 +1,3 @@
-.actor {
-  // display: flex;
-}
-
 .actor__avatar {
   width: 100%;
   height: 350px;
@@ -30,15 +26,32 @@
 .actor__description-text {
   display: block;
   background: #fff;
-  max-height: 4vh;
-  font-size: 15px;
+  max-height: 3em;
+  font-size: 1em;
   color: #000;
   overflow: hidden;
   transition: max-height 1s;
+
+  @include phones {
+    font-size: 1.4em;
+  }
+
   &:hover {
     max-height: 80vh;
     position: absolute;
-    width: 29%;
+    width: 26em;
     padding-bottom: 20px;
+
+    @include desktop {
+      width: 22em;
+    }
+
+    @include tablets {
+      width: 29em;
+    }
+
+    @include phones {
+      width: 85%;
+    }
   }
 }

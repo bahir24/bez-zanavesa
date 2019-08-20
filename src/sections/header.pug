@@ -3,7 +3,7 @@ header.header
               .header__columns
                 .header__col-left              
                   .logo
-                    +image('logo/logo.png', 'logo-pic')                                            
+                    +image('logo/logo.png', 'logo-pic') 
                 .header__col-center                  
                   nav.nav
                     .container.container--nav
@@ -36,6 +36,7 @@ header.header
                         each item in items                       
                           li.nav__item
                             a(href=`${item.link}`).nav__link #{item.name}
+                  h1.nav__mobile ТЕАТР БЕЗ ЗАНАВЕСА
                 .header__col-right
                   .burger
                     a.burger__link
