@@ -1,24 +1,30 @@
 .opinions__list {
-  height: 75vh;
+  // height: 75vh;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   overflow: hidden;
-  @include phones {
-    height: unset;
-  }
+
+  // @include phones {
+  //   height: unset;
+  // }
 }
 
+// .opinions__list {
+
+// } 
+
 .opinions__item {
-  display: inline-flex;
-  flex-direction: column;
-  justify-content: space-between;
   width: 25%;
-  height: 50%;
-  // max-height: 500px;
-  // transition: max-height 2s;
   padding: 0 2%;
 
+
+  // display: inline-flex;
+  // flex-direction: column;
+  // height: 50%;
+  // justify-content: space-between;
+  // max-height: 500px;
+  // transition: max-height 2s;
   // &:hover {
   //   background: #fff;
   //   // position: relative;
@@ -26,31 +32,32 @@
   //   height: unset;
   // }
 
-  @include tablets {
+  @include desktop {
     width: 50%;
-    height: 25%;
+    // height: 25%;
   }
 
   @include phones {
     width: 100%;
-    height: 20vh;
+    // height: 20vh;
   }
 }
 
 .opinions__item-about {
-  height: 12em;  
+  height: 6em;
   overflow: hidden;
 }
 
 .opinions__item-text {
-  line-height: 20px;
+  line-height: 2em;
   text-align: justify;
   margin-bottom: 20px;
-  font-size: 1.5em;
+  max-height: 6em;
+  // font-size: 1.5em;
 
   @include phones {
-    font-size: 1.5em;
-    max-height: 8em;
+    // font-size: 1.5em;
+
     margin-bottom: 1em;
   }
 }
@@ -60,7 +67,7 @@
 }
 
 .opinions__item-name {
-  font-size: 1.5em;
+  // font-size: 1.5em;
   font-weight: 600;
   color: #ff8562;
 }
