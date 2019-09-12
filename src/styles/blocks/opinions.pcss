@@ -1,73 +1,50 @@
 .opinions__list {
-  // height: 75vh;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  overflow: hidden;
-
-  // @include phones {
-  //   height: unset;
-  // }
 }
 
-// .opinions__list {
-
-// } 
-
 .opinions__item {
+  display: flex;
+  flex-direction: column;
   width: 25%;
+  height: 30em;
   padding: 0 2%;
+  margin-bottom: 2em;
 
 
-  // display: inline-flex;
-  // flex-direction: column;
-  // height: 50%;
-  // justify-content: space-between;
-  // max-height: 500px;
-  // transition: max-height 2s;
-  // &:hover {
-  //   background: #fff;
-  //   // position: relative;
-  //   max-height: 900px;
-  //   height: unset;
-  // }
 
   @include desktop {
     width: 50%;
-    // height: 25%;
   }
 
   @include phones {
     width: 100%;
-    // height: 20vh;
   }
 }
 
-.opinions__item-about {
-  height: 6em;
-  overflow: hidden;
-}
-
 .opinions__item-text {
-  line-height: 2em;
+  position: relative;
+  overflow: hidden;
   text-align: justify;
-  margin-bottom: 20px;
-  max-height: 6em;
-  // font-size: 1.5em;
+  line-height: 2em;
+  max-height: 18em;
+  margin-bottom: 4em;
 
   @include phones {
-    // font-size: 1.5em;
-
     margin-bottom: 1em;
+  }
+
+  &:hover {
+    max-height: 48em;
   }
 }
 
 .opinions__item-link {
+  position: relative;
   text-decoration: none;
-}
-
-.opinions__item-name {
-  // font-size: 1.5em;
   font-weight: 600;
   color: #ff8562;
 }
+
+// .opinions__item-name {}

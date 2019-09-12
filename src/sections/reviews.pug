@@ -33,8 +33,6 @@ section.reviews
             }
           ]                              
         each opinion in opinions
-          li.opinions__item
-            .opinions__item-about
-              p.opinions__item-text #{opinion.text}
-            a(href=`${opinion.link}`).opinions__item-link
-              h4.opinions__item-name #{opinion.name}
+          li.opinions__item            
+            p.opinions__item-text #{opinion.text}
+            a(href=`${opinion.link}`).opinions__item-link #{opinion.name}
