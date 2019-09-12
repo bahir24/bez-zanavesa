@@ -8,14 +8,74 @@ section.poster
                   var events= [ 
                     {
                         date: '16 сентября, понедельник',
-                        name: '"Сказки Шаляпина", 5+ (спектакль на Международном фестивале театров "БАЛТИЙСКИЙ КУКЛОВОРОТ | BALTIC PUPPETWHIRL")',
-                        description: 'Театр "Святая крепость" г. Выборг, ул. Спортивная, д.4 Телефон : +7 (81378) 2-79-85',
+                        name: '"Сказки Шаляпина", 6+',
+                        description: '"Театр "Святая крепость" г. Выборг, ул. Спортивная, д.4 Телефон : +7 (81378) 2-79-85',
                         buy: 'https://vk.com/puppetfest_vbg',
-                        about: 'https://vk.com/bezzanavesa'
+                        about: 'https://vkshalyapin.com/bezzanavesa',
+                        pic: 'shalyapin'
+                    },{
+                        date: '5 октября, суббота 12:00',
+                        name: '"Сказки Шаляпина", 6+ ',
+                        description: '"Театр Синий Сарафан" Набережная Канала Грибоедова д.107',
+                        buy: 'https://radario.ru/events/516947/tickets',
+                        about: 'https://vk.com/bezzanavesa',
+                        pic: 'shalyapin'
+                    },{
+                        date: '5 октября, суббота 14:00',
+                        name: '"Сказки Шаляпина", 6+ ',
+                        description: '"Театр Синий Сарафан" Набережная Канала Грибоедова д.107',
+                        buy: 'https://radario.ru/events/516948/tickets',
+                        about: 'https://vk.com/bezzanavesa',
+                        pic: 'shalyapin'
+                    },{
+                        date: '19 октября, суббота 12:00',
+                        name: '"БИБА. Про Сашу Блока", 5+ ',
+                        description: '"Театр Синий Сарафан" Набережная Канала Грибоедова д.107',
+                        buy: 'https://radario.ru/events/516949',
+                        about: 'https://vk.com/bezzanavesa',
+                        pic: 'biba'
+                    },{
+                        date: '19 октября, суббота 14:00',
+                        name: '"БИБА. Про Сашу Блока", 5+ ',
+                        description: '"Театр Синий Сарафан" Набережная Канала Грибоедова д.107',
+                        buy: 'https://radario.ru/events/516950',
+                        about: 'https://vk.com/bezzanavesa',
+                        pic: 'biba'
+                    },{
+                        date: '27 октября, суббота',
+                        name: '"Игра в прятки", 4+ ',
+                        description: '"Театр Синий Сарафан" Набережная Канала Грибоедова д.107',
+                        buy: 'https://vk.com/puppetfest_vbg',
+                        about: 'https://vk.com/bezzanavesa',
+                        pic: 'pryatki'
+                    },{
+                        date: '27 октября, суббота',
+                        name: '"Игра в прятки", 4+ ',
+                        description: '"Театр Синий Сарафан" Набережная Канала Грибоедова д.107',
+                        buy: 'https://vk.com/puppetfest_vbg',
+                        about: 'https://vk.com/bezzanavesa',
+                        pic: 'pryatki'
+                    },{
+                        date: '12 октября, суббота 13:00',
+                        name: '"БИБА. Про Сашу Блока", 5+ ',
+                        description: '"Подвал Бродячей собаки" Итальянская ул., 4, Санкт-Петербург',
+                        buy: 'https://vk.com/puppetfest_vbg',
+                        about: 'https://vk.com/bezzanavesa',
+                        pic: 'biba'
+                    },{
+                        date: '16 сентября, понедельник',
+                        name: '"Сказки Шаляпина", 6+ ',
+                        description: '"Театр Синий Сарафан" Набережная Канала Грибоедова д.107',
+                        buy: 'https://vk.com/puppetfest_vbg',
+                        about: 'https://vk.com/bezzanavesa',
+                        pic: 'shalyapin'
                     }
                   ]
                 each event in events                    
-                  li.perfomances__item 
+                  li.perfomances__item
+                    if event.pic != ''
+                      .poster__avatar                      
+                        +image(`poster/${event.pic}.jpg`, 'poster__avatar-image')
                     date.perfomances__item-date #{event.date}
                     h2.perfomances__item-name #{event.name}                 
                     p.perfomances__item-description #{event.description}
