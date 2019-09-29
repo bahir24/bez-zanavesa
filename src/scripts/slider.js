@@ -12,30 +12,62 @@ var currSlidePos = {
 
 
 nextSlideArrow.addEventListener('click', function SlideToRight() {
+  //находим значение left у элемента, который по умолчанию загружается на странице
   let nextSlidePos = currSlidePos.leftOffset;
-  let subIndex = currSlidePos.indexOrder % 3;
+  //получаем значение поля объекта, привязанного к загружаемому по умолчанию элементу слайдера(li)
+  //значение по умолчанию "0"
+  //таким образом, присваеваем инедексы 1 и 2 оставшимся двум экранам слайдера
+  let subIndex = 3 % currSlidePos.indexOrder;
+  //получаем ряд (обратный) для рассчета коэффициента, позволяющего "бесконечно" мотать слайдер
+  //значения этого ряда будут суммироваться с текущим indexOrder всегда образуя число кратное (трем)  
+  //на этот коэффициент (количество пройденых кругов) будет умножаться свойство transform: translate 300% * коэф-т
   let reversSubIndex = 5 % (subIndex + 3);
+  //при движении вправо добавляем 1 к indexOrder
   currSlidePos.indexOrder++;
   
-  let iterIndex = (currSlidePos.indexOrder + reversSubIndex) / 3;
-  let transformString = 'translateX' + '(' + iterIndex * 300 + '%' + ')';
-  eval('slide' + subIndex).style.transform = transformString;
-  currSlidePos.leftOffset = nextSlidePos - 100;
-  sliderImagesList.style.left = currSlidePos.leftOffset + '%';
+  console.log(reversSubIndex);
+  console.log(subIndex);
+  //высчитываем коэффициент-счетчик
+  // let iterIndex = (currSlidePos.indexOrder + reversSubIndex) / 3;
+  //склеиваем строку с необходимым синтаксисом
+  //translateX(индекс-счетчик * 300%)
+  // let transformString = 'translateX' + '(' + iterIndex * 300 + '%' + ')';
+
+
+  //в результате, выбираем предидущий элемент, т. к. нумеруются они с "0"
+  //ему и добавляется свойство transform
+  // eval('slide' + subIndex).style.transform = transformString;
+  //записываем новое значение left у всего блока
+  // currSlidePos.leftOffset = nextSlidePos - 100;
+  //добавляем блоку необходимые свойства
+  // sliderImagesList.style.left = currSlidePos.leftOffset + '%';
 });
 
-prevSlideArrow.addEventListener('click', function SlideToLeft() {
-  let nextSlidePos = currSlidePos.leftOffset;
-  let subIndex = currSlidePos.indexOrder % 3;
-  let reversSubIndex = 5 % (subIndex + 3);
-  currSlidePos.indexOrder--;
-  console.log(currSlidePos.indexOrder);
-  let iterIndex = (currSlidePos.indexOrder + subIndex) / 3;
-  let transformString = 'translateX' + '(' + (iterIndex * 300) * (-1) + '%' + ')';
-  eval('slide' + reversSubIndex).style.transform = transformString;
-  currSlidePos.leftOffset = nextSlidePos + 100;
-  sliderImagesList.style.left = currSlidePos.leftOffset + '%';
-});
+// prevSlideArrow.addEventListener('click', function SlideToLeft() {
+//   //находим значение left у элемента, который в настоящий момент отображается на странице
+  
+//   let nextSlidePos = currSlidePos.leftOffset;
+//   //получаем индекс текущего элемента
+// let subIndex = (currSlidePos.indexOrder) % 3;
+//   currSlidePos.indexOrder--;
+//   //так же создаем обратный ряд для расчета коэффициента количества кругов
+//   let reversSubIndex = 5 % (subIndex + 3);
+//   //уменьшаем значение indexOrder на 1
+  
+
+  
+//   // console.log(currSlidePos.indexOrder);
+//   //расчитываем количество пройденых кругов
+//   let iterIndex = (currSlidePos.indexOrder - reversSubIndex) / 3;
+  
+//   let transformString = 'translateX' + '(' + iterIndex * 300 + '%' + ')';
+//   console.log(transformString);
+  
+//   eval('slide' + reversSubIndex).style.transform = transformString;
+//   currSlidePos.leftOffset = nextSlidePos + 100;
+//   sliderImagesList.style.left = currSlidePos.leftOffset + '%';
+  
+// });
 
 
 
