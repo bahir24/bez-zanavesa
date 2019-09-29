@@ -56,7 +56,7 @@
   text-align: justify;
   font-size: 20px;
   line-height: 1.55;
-
+  padding: 0 2%;
 
   @include tablets {
     position: absolute;
@@ -70,6 +70,16 @@
 
     &:hover {
       max-height: 100em;
+
+      @include phones {
+        max-height: unset;
+      }
+    }
+
+    &:active {
+      @include phones {
+        max-height: 100em;
+      }
     }
   }
 

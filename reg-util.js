@@ -21,7 +21,7 @@ const registerUser = (name, password) => {
     (err, response, body) => {
       if (err) signale.fatal(err);
       
-      console.log(response.statusCode);
+      // console.log(response.statusCode);
       
 
       switch (response.statusCode) {

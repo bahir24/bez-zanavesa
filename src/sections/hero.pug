@@ -1,7 +1,7 @@
 section.hero                      
             .container.container--slider
               .slider
-                .slider-images                
+                .slider-images
                   ul.slider-images__list
                     - for (var i = 0; i < 3; i++)
                       li.slider-images__item
@@ -9,7 +9,7 @@ section.hero
                 ul.slider-buttons
                   - 
                     var btns= ['left', 'right']
-                  each btn in btns                  
+                  each btn in btns
                     li.slider-buttons__button(class=`slider-buttons__button-${btn}`)
                       a.slider-buttons__arrow
                 ul.slider-points

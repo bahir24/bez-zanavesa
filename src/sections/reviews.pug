@@ -34,5 +34,7 @@ section.reviews
           ]                              
         each opinion in opinions
           li.opinions__item            
-            p.opinions__item-text #{opinion.text}
+            p(
+              onclick=""
+            ).opinions__item-text #{opinion.text}
             a(href=`${opinion.link}`).opinions__item-link #{opinion.name}

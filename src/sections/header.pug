@@ -66,3 +66,29 @@ header.header
                             target="_blank"
                             ).socials__link 
                             +icon(`${social.name}`, 'socials__icon')
+                .header__mobile-socials
+                  .socials.socials--mobile
+                    ul.socials__list
+                      - 
+                        var socials= [ 
+                          {
+                              name: 'fb',
+                              link: 'https://www.facebook.com/bezzanavesa'
+                          },{
+                              name: 'vk',
+                              link: 'https://vk.com/bezzanavesa'
+                          },{
+                              name: 'youtube',
+                              link: 'https://www.youtube.com/channel/UC_8d8MYU-WXwnmb0Rs_qPig'
+                          },{
+                              name: 'insta',
+                              link: 'https://www.instagram.com/bezzanavesa'
+                          }
+                        ]
+                      each social in socials                    
+                        li.socials__item.socials__item--grow
+                          a(
+                            href=`${social.link}`
+                            target="_blank"
+                            ).socials__link 
+                            +icon(`${social.name}`, 'socials__icon')
