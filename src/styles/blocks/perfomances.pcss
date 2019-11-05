@@ -13,10 +13,10 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 30%;
+  width: 33%;
   background: #fff;
   margin-bottom: 30px;
-  padding: 2%;
+  padding: 2% 1.5%;
 
   @include tablets {
     width: 48%;
@@ -27,15 +27,27 @@
   }
 }
 
-.perfomances__item-date {
+.perfomances__date {
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.perfomances__date-num {
   display: block;
-  margin-bottom: 25px;
-  font-size: 18px;
+  font-size: 1em;
+
   font-weight: 600;
   color: #000;
 }
 
-.perfomances__item-name {
+.perfomances__date-dateadv {
+  font-size: .8em;
+  color: red;
+  height: .8em;
+}
+
+.perfomances__name {
+  text-align: center;
   display: block;
   font-size: 1.7em;
   color: #ff0101;
@@ -43,18 +55,57 @@
   font-weight: 700;
 }
 
-.perfomances__item-description {
-  display: block;
-  margin-bottom: 25px;
+.perfomances__other {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  font-size: .9em;
+  width: 100%;
+  font-weight: 700;
+  height: 8em;
+  justify-content: space-around;
 
   @include phones {
     font-size: 1.5em;
   }
 }
 
-.perfomances__item-buttons {
+.perfomances__other-age,
+.perfomances__other-place,
+.perfomances__other-adress {
+  width: 100%;
+  display: inline-flex;
+
+}
+
+.perfomances__other-age::before,
+.perfomances__other-place::before,
+.perfomances__other-adress::before {
+  display: inline-flex;
+  margin-right: 5px;
+  width: 30%;
+  color: #20b3b3;
+  font-weight: 300;
+}
+
+.perfomances__other-age::before {
+  content: 'Для детей';
+}
+
+.perfomances__other-place::before {
+  content: 'Место спектакля';
+}
+
+.perfomances__other-adress::before {
+  content: 'Адрес';
+}
+
+
+// .perfomances__other-place::before,
+// .perfomances__other-adress::before {}
+
+.perfomances__button {
   margin-top: auto;
-  // align-self: flex-end;
   display: flex;
   justify-content: space-between;
 }

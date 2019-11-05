@@ -48,5 +48,5 @@ section.gallery
                 ]
               each photo in photos
                 li.photos__item
-                  a(href=`${photo.link}`).photos__item-link
+                  a(href=`${photo.link}` onclick="return false;").photos__item-link
                     +image(`gallery/${photo.value}.jpg`, 'photos__item-pic')
