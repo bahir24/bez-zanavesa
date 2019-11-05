@@ -53,37 +53,47 @@
   color: #ff0101;
   margin-bottom: 25px;
   font-weight: 700;
+  height: 2em;
 }
 
 .perfomances__other {
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
   margin-bottom: 20px;
-  font-size: .9em;
+  font-size: 1.1em;
   width: 100%;
   font-weight: 700;
   height: 8em;
-  justify-content: space-around;
+
+
+  @include desktopHd {
+    font-size: .9em;
+  }
+
+  @include desktop {
+    font-size: 0.8em;
+  }
+  @include tablets {
+    font-size: 0.7em;
+  }
 
   @include phones {
-    font-size: 1.5em;
+    font-size: 1.4em;
   }
 }
 
 .perfomances__other-age,
 .perfomances__other-place,
 .perfomances__other-adress {
-  width: 100%;
-  display: inline-flex;
-
+  display: flex;
 }
 
 .perfomances__other-age::before,
 .perfomances__other-place::before,
 .perfomances__other-adress::before {
-  display: inline-flex;
-  margin-right: 5px;
-  width: 30%;
+  text-align: left;
+  min-width: 9em;
   color: #20b3b3;
   font-weight: 300;
 }
@@ -99,10 +109,6 @@
 .perfomances__other-adress::before {
   content: 'Адрес';
 }
-
-
-// .perfomances__other-place::before,
-// .perfomances__other-adress::before {}
 
 .perfomances__button {
   margin-top: auto;

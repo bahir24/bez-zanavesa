@@ -62,7 +62,7 @@ section.poster
                       p.perfomances__other-place #{event.place}
                       p.perfomances__other-adress #{event.adress}
                     .perfomances__button
-                      if event.number !==''
+                      if event.number
                         a(
                           href=`tel: + ${event.number}`                          
                         ).btn.btn--width Купить билет                           
