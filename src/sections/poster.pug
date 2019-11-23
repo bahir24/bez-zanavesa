@@ -1,29 +1,20 @@
 section.poster
           a(name="poster").anchor
           .container
-            h2.section-head Афиша октябрь 2019
+            h2.section-head Афиша ноябрь 2019
             .perfomances
               ul.perfomances__list
                 - 
                   var events= [ 
                     {
-                        date: '10 ноября, воскресенье 18:00',
-                        name: '"БИБА. Про Сашу Блока"',
-                        age: '5+',
-                        place: 'Театр «Три четыре»',
-                        adress: '2-й Муринский пр., д. 34',
-                        buy: 'https://iframeab-pre1946.intickets.ru/node/11283310',                        
-                        about: 'https://vk.com/topic-22116444_24057143',
-                        pic: 'biba'
-                    },{
-                        date: '17 ноября, воскресенье 12:00',
-                        dateadv: 'время начала спектакля уточняется',
+                        date: '17 ноября, воскресенье 13:00',                        
                         name: '"БИБА. Про Сашу Блока"',
                         age: '5+',
                         place: 'Музей-квартира А.А.Блока»',
                         adress: 'ул. Декабристов, д. 57',                        
                         call: true,
-                        number: '79500401422',
+                        ticket_cloud_event: '5dc26cb307fca0e583cd5ef6',
+                        ticket_cloud_token: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsImlzcyI6InRpY2tldHNjbG91ZC5ydSJ9.eyJwIjoiNWQ5ZGI1ZDU3Yzc4MGZkZGJjZDYxYjk0In0.egM4gU8Mx7yeMFvr6qYcvlwQWdmYtg3dxeFdAxNZAh8',
                         about: 'https://vk.com/topic-22116444_24057143',
                         pic: 'biba'
                     },{
@@ -68,6 +59,8 @@ section.poster
                         ).btn.btn--width Купить билет                           
                       else
                         a(
+                          data-tc-event=`${event.ticket_cloud_event}`
+                          data-tc-token=`${event.ticket_cloud_token}`
                           href=`${event.buy}`
                           target="_blank"
                         ).btn.btn--width Купить билет
