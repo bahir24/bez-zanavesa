@@ -1,0 +1,85 @@
+section.calendar
+          .container
+            h2.section-head.section-head--feedback Бронирование новогоднего квартирника*
+            p.feedback__description 
+              |Заполните форму ниже, и выберете желаемую услугу. 
+              br
+              |Мы ответим Вам в ближайшее время!
+            .feedback__form
+              form(                
+                method="post"
+                action="msg.php"
+                name="calendar"
+              ).cal-form
+                ul.form__rows
+                  - 
+                    var rows= [ 
+                      {
+                          name: 'Выберите спектакль',
+                          tag: 'select',                          
+                          placeholder: 'Выберите спектакль',
+                          element: 'spect',
+                          datatype: 'text',
+                          option: ['Выберете желаемый спектакль','Сказки Шаляпина','Рождественское чудо'],
+                          optcount: '3'
+                          //- pattern: ''
+                      },{
+                          name: 'Выберите удобную дату',
+                          tag: 'input',
+                          placeholder: 'Дата',
+                          frame: '<iframe src="https://calendar.google.com/calendar/b/1/embed?height=300&amp;wkst=2&amp;bgcolor=%23ffffff&amp;ctz=Europe%2FMoscow&amp;src=dHJxcmE4dGtjajIxNzZxZXVtdXViNTg5MWtAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&amp;color=%23336699&amp;showTitle=0&amp;showNav=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;title" style="border-width:0" width="300" height="300" frameborder="0" scrolling="no"></iframe>',
+                          element: 'date',
+                          datatype: 'text'
+                          //- pattern: ''
+                          //- asd
+                      },{
+                          name: 'Дополнительные услуги',
+                          tag: 'select',
+                          placeholder: 'Номер телефона',
+                          element: 'tel',
+                          datatype: 'number',
+                          option: ['Выберете желаемую услугу','Народные игры','Дед Мороз и Снегурочка'],
+                          optcount: '3'
+                          //- patern: '/^[\d]{10}\'
+                      },{
+                          name: 'Промокод',                          
+                          placeholder: 'Введите промокод',
+                          element: 'services',
+                          tag: 'input',
+                          //- datatype: 'text',
+                          //- pattern: ''
+                      },{
+                          name: 'Промокод',                          
+                          placeholder: 'Введите промокод',
+                          element: 'services',
+                          tag: 'input',
+                          //- datatype: 'text',
+                          //- pattern: ''
+                      },{
+                          name: 'Ваше сообщение успешно отправлено',
+                          tag: ''                          
+                      }
+                    ]
+                  each row in rows                   
+                    li.form__row
+                      if row.tag != ''
+                        label.form__row-label
+                          h4.form__row-head #{row.name}                          
+                            #{row.tag}(
+                              type=`${row.datatype}`                            
+                              placeholder=`${row.placeholder}`
+                              name=`${row.element}`                          
+                              required
+                              ).form__row-input
+                                if row.tag == 'select'
+                                  - for (var i = 0; i < row.optcount; i++)
+                                    option(color="#fff").form__option #{row.option[i]}                            
+                            .error
+                        #{row.frame}
+                      else
+                        h4.form__sent-head #{row.name}
+                        button.btn.btn__text.btn__other Отправить еще одно
+                button().btn.btn--form Отправить заявку
+              .docs
+                a(href="https://docs.google.com/document/d/1ZPKdL-mzzU7N5YcQu2DJHHkAGjxvuYqolwmLFsPl6jA/edit?usp=sharing").docs__link
+                  p.docs__link-text Соглашение на обработку персональных данных
