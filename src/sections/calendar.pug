@@ -1,7 +1,66 @@
 section.calendar
   .container
     .dates
-      ul.dates__list
-        li.book
-          h3.book__date 21
-          h4.book__month декабря
+      ul.dates__list 
+        - for (var i = 0; i < 5; i++)
+          li.book
+            h3.book__date 21
+            h4.book__month декабря
+            .book__row
+              label.book__field
+                h5.book__field-head Спектакль
+                select.book__field-input
+                  option Выберете желаемый спектакль
+                  option Сказки Шаляпина
+                  option Рождественское чудо
+            .book__row
+              label.book__field
+                h5.book__field-head Дополнительные услуги
+                select.book__field-input
+                  option Выберете дополнительную услугу
+                  option Народные игры
+                  option Дед мороз и снегурочка
+            .book__price
+              h2.book__price-count 2500               
+      ul.dates__list 
+        - for (var i = 0; i < 5; i++)
+          li.book
+            h3.book__date 21
+            h4.book__month декабря
+            .book__row
+              label.book__field
+                h5.book__field-head Спектакль
+                select.book__field-input
+                  option Выберете желаемый спектакль
+                  option Сказки Шаляпина
+                  option Рождественское чудо
+            .book__row
+              label.book__field
+                h5.book__field-head Дополнительные услуги
+                select.book__field-input
+                  option Выберете дополнительную услугу
+                  option Народные игры
+                  option Дед мороз и снегурочка
+            .book__price
+              h2.book__price-count 2500               
+      ul.dates__list 
+        - for (var i = 0; i < 5; i++)
+          li.book
+            h3.book__date 21
+            h4.book__month декабря
+            .book__row
+              label.book__field
+                h5.book__field-head Спектакль
+                select.book__field-input
+                  option Выберете желаемый спектакль
+                  option Сказки Шаляпина
+                  option Рождественское чудо
+            .book__row
+              label.book__field
+                h5.book__field-head Дополнительные услуги
+                select.book__field-input
+                  option Выберете дополнительную услугу
+                  option Народные игры
+                  option Дед мороз и снегурочка
+            .book__price
+              h2.book__price-count 2500               

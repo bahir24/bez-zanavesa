@@ -1,4 +1,5 @@
 .book {
+  position: relative;
   width: 8vw;
   height: 8vw;
   border: 1px solid #d31c1c;
@@ -8,14 +9,42 @@
   align-items: center;
   justify-content: center;
   color: #d31c1c;
+  background: rgba(255, 255, 255, 0.3);
+  transition: width 1s, height 1s;
+
+  &:hover {
+    width: 15vw;
+    height: 13vw;
+  }
+
+  .book__row {
+    // display: none;
+    // border: 1px solid black;
+    width: 6vw;
+    height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: width 1s, opacity 1s;
+  }
+
+  &:hover>.book__row {
+    // display: block;
+    width: 14vw;
+    opacity: 1;
+    height: 3vw;
+  }
 }
 
 .book__date {
   font-weight: 800;
   font-size: 2em;
-  
+
 }
 
 .book__month {
   font-weight: 600;
+}
+
+.book__row {
+  // display: none;
 }
