@@ -1,7 +1,7 @@
 .book {
   position: relative;
-  width: 8vw;
-  height: 8vw;
+  width: 200px;
+  height: 200px;
   border: 1px solid #d31c1c;
   border-radius: 5px;
   display: flex;
@@ -11,40 +11,95 @@
   color: #d31c1c;
   background: rgba(255, 255, 255, 0.3);
   transition: width 1s, height 1s;
+  padding: 10px;
+
+  @include desktop {
+    width: 150px;
+    height: 150px;
+  }
+
+  @include tablets {
+    font-size: .8em;
+    width: 100px;
+    height: 100px;
+  }
 
   &:hover {
-    width: 15vw;
-    height: 13vw;
+    justify-content: space-around;
+    width: 340px;
+    height: 270px;
+
+    @include tablets {
+      width: 300px;
+      height: 250px;
+      padding: 5px;
+    }
+
   }
 
-  .book__row {
-    // display: none;
-    // border: 1px solid black;
-    width: 6vw;
-    height: 0;
-    overflow: hidden;
-    opacity: 0;
-    transition: width 1s, opacity 1s;
-  }
 
   &:hover>.book__row {
-    // display: block;
-    width: 14vw;
+    width: 300px;
     opacity: 1;
-    height: 3vw;
+    height: 3em;
+
+    @include tablets {
+      width: 270px;
+      // height: 2em;
+    }
+
+    &:last-child {
+      height: unset;
+    }
   }
 }
+
+.book__row {
+  width: 200px;
+  height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: width 1s, opacity 1s;
+
+  &:last-child {
+    display: flex;
+    justify-content: space-between;
+
+    .book__field-input {
+      border: 1px solid #d31c1c;
+    }
+  }
+}
+
 
 .book__date {
   font-weight: 800;
   font-size: 2em;
-
 }
 
 .book__month {
   font-weight: 600;
 }
 
-.book__row {
-  // display: none;
+.book__field-head {
+  font-size: 10px;
+}
+
+
+
+.book__field-input {
+  width: 100%;
+  border: none;
+  background: none;
+  color: #d31c1c;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.book__price-count {
+  &:after {
+    content: 'р';
+  }
 }
