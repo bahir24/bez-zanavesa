@@ -1,85 +1,93 @@
 section.calendar
-          .container
-            h2.section-head.section-head--feedback Бронирование новогоднего квартирника*
-            p.feedback__description 
-              |Заполните форму ниже, и выберете желаемую услугу. 
-              br
-              |Мы ответим Вам в ближайшее время!
-            .feedback__form
-              form(                
-                method="post"
-                action="msg.php"
-                name="calendar"
-              ).cal-form
-                ul.form__rows
-                  - 
-                    var rows= [ 
-                      {
-                          name: 'Выберите спектакль',
-                          tag: 'select',                          
-                          placeholder: 'Выберите спектакль',
-                          element: 'spect',
-                          datatype: 'text',
-                          option: ['Выберете желаемый спектакль','Сказки Шаляпина','Рождественское чудо'],
-                          optcount: '3'
-                          //- pattern: ''
-                      },{
-                          name: 'Выберите удобную дату',
-                          tag: 'input',
-                          placeholder: 'Дата',
-                          frame: '<iframe src="https://calendar.google.com/calendar/b/1/embed?height=300&amp;wkst=2&amp;bgcolor=%23ffffff&amp;ctz=Europe%2FMoscow&amp;src=dHJxcmE4dGtjajIxNzZxZXVtdXViNTg5MWtAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&amp;color=%23336699&amp;showTitle=0&amp;showNav=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;title" style="border-width:0" width="300" height="300" frameborder="0" scrolling="no"></iframe>',
-                          element: 'date',
-                          datatype: 'text'
-                          //- pattern: ''
-                          //- asd
-                      },{
-                          name: 'Дополнительные услуги',
-                          tag: 'select',
-                          placeholder: 'Номер телефона',
-                          element: 'tel',
-                          datatype: 'number',
-                          option: ['Выберете желаемую услугу','Народные игры','Дед Мороз и Снегурочка'],
-                          optcount: '3'
-                          //- patern: '/^[\d]{10}\'
-                      },{
-                          name: 'Промокод',                          
-                          placeholder: 'Введите промокод',
-                          element: 'services',
-                          tag: 'input',
-                          //- datatype: 'text',
-                          //- pattern: ''
-                      },{
-                          name: 'Промокод',                          
-                          placeholder: 'Введите промокод',
-                          element: 'services',
-                          tag: 'input',
-                          //- datatype: 'text',
-                          //- pattern: ''
-                      },{
-                          name: 'Ваше сообщение успешно отправлено',
-                          tag: ''                          
-                      }
-                    ]
-                  each row in rows                   
-                    li.form__row
-                      if row.tag != ''
-                        label.form__row-label
-                          h4.form__row-head #{row.name}                          
-                            #{row.tag}(
-                              type=`${row.datatype}`                            
-                              placeholder=`${row.placeholder}`
-                              name=`${row.element}`                          
-                              required
-                              ).form__row-input
-                                if row.tag == 'select'
-                                  - for (var i = 0; i < row.optcount; i++)
-                                    option(color="#fff").form__option #{row.option[i]}                            
-                            .error
-                        #{row.frame}
-                      else
-                        h4.form__sent-head #{row.name}
-                        button.btn.btn__text.btn__other Отправить еще одно
-                button().btn.btn--form Отправить заявку
-              .docs
-                a(href="https://docs.google.com/document/d/1ZPKdL-mzzU7N5YcQu2DJHHkAGjxvuYqolwmLFsPl6jA/edit?usp=sharing").docs__link
-                  p.docs__link-text Соглашение на обработку персональных данных
+  .container
+    h2.section-head.section-head--book Бронирование выездных новогодних спектаклей
+    h3.section-subhead--book Стоимость "новогоднего квартирника" зависит от выбранного вами спектакля. Выберите желаемую дату, спектакль, дополнительную услугу и с администратор свяжется с вами в ближайшее время. Кстати, если у вас есть промокод - не забудьте ввести его.
+    .dates
+      ul.dates__list 
+        - 
+          var bookdates= [ 
+            {
+                date: '21',
+                month: 'декабря'                
+            },{
+                date: '22',
+                month: 'декабря'                
+            },{
+                date: '23',
+                month: 'декабря'                
+            },{
+                date: '25',
+                month: 'декабря'                
+            },{
+                date: '26',
+                month: 'декабря'                
+            },{
+                date: '28',
+                month: 'декабря'                
+            },{
+                date: '29',
+                month: 'декабря'                
+            },{
+                date: '30',
+                month: 'декабря'                
+            },{
+                date: '31',
+                month: 'декабря'                
+            },{
+                date: '1',
+                month: 'января'                
+            },{
+                date: '2',
+                month: 'января'                
+            },{
+                date: '3',
+                month: 'января'                
+            },{
+                date: '4',
+                month: 'января'                
+            },{
+                date: '6',
+                month: 'января'                
+            },{
+                date: '7',
+                month: 'января'                
+            },{
+                date: '8',
+                month: 'января'                
+            },{
+                date: '9',
+                month: 'января'                
+            },{
+                date: '11',
+                month: 'января'                
+            },{
+                date: '12',
+                month: 'января'                
+            }
+          ]
+        each bookdate in bookdates
+          li.book
+            h3.book__date #{bookdate.date}
+            h4.book__month #{bookdate.month}
+            .book__row
+              label.book__field
+                h5.book__field-head Спектакль
+                select.book__field-input
+                  option(value="" selected disabled) Выберете желаемый спектакль
+                  option Сказки Шаляпина
+                  option Рождественское чудо
+            .book__row
+              label.book__field
+                h5.book__field-head Дополнительные услуги
+                select.book__field-input
+                  option Выберете дополнительную услугу
+                  option Народные игры
+                  option Дед мороз и снегурочка
+            .book__row
+              label.book__field
+                h5.book__field-head Промокод
+                input(placeholder="Введите сюда промокод").book__field-input
+            .book__row
+              .book__price
+                h2.book__price-count 2500
+              button.btn.btn--book Забронировать

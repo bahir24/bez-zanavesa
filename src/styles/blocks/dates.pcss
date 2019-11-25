@@ -5,6 +5,13 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  color: #d31c1c;
+
+  @include phones {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
 }
 
 .dates__list {
@@ -14,4 +21,10 @@
   align-items: center;
   width: 100%;
   min-height: 30%;
+
+  @include phones {
+    // width: 100px;
+    width: 100px;
+    // min-height: unset;
+  }
 }
