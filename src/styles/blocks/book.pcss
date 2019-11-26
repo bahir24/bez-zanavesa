@@ -79,11 +79,52 @@
 
   }
 
+  .book__row {
+    width: 200px;
+    height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: height 1s, width 1s, opacity 1s;
+
+    &--first {
+      display: flex;
+      justify-content: center;
+      opacity: 1;
+      height: unset;
+
+      .btn--book {
+        height: 0;
+        width: 0;
+        display: none;
+      }
+    }
+
+    &:last-child {
+      display: flex;
+      justify-content: space-between;
+
+      .book__field-input {
+        border: 1px solid #d31c1c;
+      }
+    }
+  }
 
   &:hover>.book__row {
     width: 450px;
     opacity: 1;
     height: 70px;
+
+    &--first {
+      width: 450px;
+      height: unset;
+      justify-content: space-between;
+
+      .btn--book {
+        height: 70px;
+        flex: .7;
+        display: block;
+      }
+    }
 
     @include desktop {
       width: 270px;
@@ -101,30 +142,21 @@
     &:last-child {
       height: unset;
     }
+
+
   }
 }
 
-.book__row {
-  width: 200px;
-  height: 0;
-  overflow: hidden;
-  opacity: 0;
-  transition: height 1s, width 1s, opacity 1s;
-
-  &:last-child {
-    display: flex;
-    justify-content: space-between;
-
-    .book__field-input {
-      border: 1px solid #d31c1c;
-    }
-  }
-}
 
 
 .book__date {
+  text-align: center;
+}
+
+.book__day {
   font-weight: 800;
   font-size: 4em;
+  line-height: 50px;
 
   @include desktop {
     font-size: 1.5em;

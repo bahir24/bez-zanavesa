@@ -7,6 +7,7 @@ for (i = 0; i<btnsBook.length; i++) {
     // let mainDiv = document.body;
     document.body.className = "stop-scrolling";
     messageBook.classList.add("booking--active");
+    messageBook.querySelector('.booking__send').classList.add('booking__send--active');
   });
 };
 // btnsBook.addEventListener('click', function (event) {
