@@ -7,3 +7,4 @@ import "./scripts/slider";
 import './scripts/feedback';
 import './scripts/screen-menu';
 import './scripts/up';
+import "./scripts/booking";
