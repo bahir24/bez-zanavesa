@@ -8,11 +8,19 @@
   left: 0;
   right: 0;
   margin: auto;
+  background: rgba(255, 255, 255, 0);
+  box-shadow: 0 0 0 0px rgba(0, 0, 0, 0);
+
   @include desktop {
-    // height: 600px;
     width: 70%;
-  
   }
+
+  &--active {
+    z-index: 15;
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0 0 0 999999px rgba(0, 0, 0, 0.8);
+  }
+
   // @include desktop {
 
   //   height: 320px;
