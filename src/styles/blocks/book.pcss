@@ -1,8 +1,9 @@
 .book {
-  position: relative;
-  width: 200px;
-  height: 200px;
+  position: absolute;
+  top: 0;
   border: 1px solid #d31c1c;
+  width: 18%;
+  height: 20%;
   border-radius: 5px;
   display: flex;
   flex-direction: column;
@@ -10,8 +11,50 @@
   justify-content: center;
   color: #d31c1c;
   background: rgba(255, 255, 255, 0.3);
-  transition: width 1s, height 1s;
   padding: 10px;
+
+  &:nth-child(n+6) {
+    top: 28%;
+  }
+
+  &:nth-child(n+11) {
+    top: unset;
+    bottom: 28%;
+  }
+
+  &:nth-child(n+16) {
+    top: unset;
+    bottom: 0;
+  }
+
+  &:nth-child(5n-4) {
+    left: 0%;
+  }
+
+  &:nth-child(5n-3) {
+    left: 25%;
+    transform: translateX(-25%);
+  }
+
+  &:nth-child(5n-2) {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  &:nth-child(5n-1) {
+    left: unset;
+    right: 25%;
+    transform: translateX(25%);
+  }
+
+  &:nth-child(5n) {
+    left: unset;
+    right: 0;
+  }
+
+  // transition: width 1s, height 1s;
+
+
   @include desktop {
     width: 150px;
     height: 150px;

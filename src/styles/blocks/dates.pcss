@@ -1,30 +1,40 @@
 .dates {
-  width: 100%;
-  height: 100%;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  color: #d31c1c;
-
-  @include phones {
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-  }
-}
-
-.dates__list {
-  display: flex;
-  justify-content: space-between;
+  flex: 1;
+  position: relative;
   flex-wrap: wrap;
-  align-items: center;
-  width: 100%;
-  min-height: 30%;
-
-  @include phones {
-    // width: 100px;
-    width: 100px;
-    // min-height: unset;
-  }
+  overflow: hidden;
 }
+
+
+
+// .dates {
+//   width: 100%;
+//   height: 100%;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   flex-direction: column;
+//   color: #d31c1c;
+
+//   @include phones {
+//     flex-direction: row;
+//     justify-content: space-around;
+//     align-items: center;
+//   }
+// }
+
+// .dates__list {
+//   display: flex;
+//   justify-content: space-between;
+//   flex-wrap: wrap;
+//   align-items: center;
+//   width: 100%;
+//   min-height: 30%;
+
+//   @include phones {
+//     // width: 100px;
+//     width: 100px;
+//     // min-height: unset;
+//   }
+// }
