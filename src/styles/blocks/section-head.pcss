@@ -49,8 +49,21 @@
     margin-bottom: 0;
     color: #d31c1c;
 
+    @include desktop {
+      font-size: 1.5em;
+    }
+
+    // @include tablets {
+    //   font-size: 1.5em;
+    // }
+
     &+.section-subhead--book {
       color: #d31c1c;
+
+      @include desktop {
+        font-size: 0.8em;
+      }
+
     }
   }
 }

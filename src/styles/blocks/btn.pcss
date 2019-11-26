@@ -25,4 +25,21 @@
   &--width {
     width: 40%;
   }
+
+  &--book {
+    width: 200px;
+    font-size: 1.2em;
+    border-color: #d31c1c;
+    color: #d31c1c;
+
+    @include desktop {
+      font-size: 1em;
+      width: 150px;
+      padding: 0;
+    }
+
+    @include phones {
+      width: 120px;
+    }
+  }
 }

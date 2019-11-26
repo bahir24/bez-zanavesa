@@ -10,8 +10,9 @@
   align-items: center;
   justify-content: center;
   color: #d31c1c;
-  background: rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.3);
   padding: 10px;
+  transition: width 1s, height 1s, background-color .5s;
 
   &:nth-child(n+6) {
     top: 28%;
@@ -52,43 +53,49 @@
     right: 0;
   }
 
-  // transition: width 1s, height 1s;
-
-
-  @include desktop {
-    width: 150px;
-    height: 150px;
-  }
-
-  @include tablets {
-    font-size: .8em;
-    width: 100px;
-    height: 100px;
-    margin-bottom: 10px;
-  }
-
   &:hover {
+
+    width: 500px;
+    height: 500px;
+    background-color: rgba(255, 255, 255, 1);
+    z-index: 10;
     justify-content: space-around;
-    width: 340px;
-    height: 270px;
+
+    @include desktop {
+      width: 285px;
+      height: 200px;
+      padding: 5px;
+    }
 
     @include tablets {
-      width: 300px;
-      height: 250px;
-      padding: 5px;
+      width: 220px;
+      height: 220px;
+    }
+
+    @include phones {
+      width: 270px;
+      height: 270px;
     }
 
   }
 
 
   &:hover>.book__row {
-    width: 300px;
+    width: 450px;
     opacity: 1;
-    height: 3em;
+    height: 70px;
+
+    @include desktop {
+      width: 270px;
+      height: 50px;
+    }
 
     @include tablets {
-      width: 270px;
-      // height: 2em;
+      width: 210px;
+    }
+
+    @include phones {
+      width: 260px;
     }
 
     &:last-child {
@@ -102,7 +109,7 @@
   height: 0;
   overflow: hidden;
   opacity: 0;
-  transition: width 1s, opacity 1s;
+  transition: height 1s, width 1s, opacity 1s;
 
   &:last-child {
     display: flex;
@@ -117,15 +124,46 @@
 
 .book__date {
   font-weight: 800;
-  font-size: 2em;
+  font-size: 4em;
+
+  @include desktop {
+    font-size: 1.5em;
+    line-height: 22px;
+  }
+
+  @include tablets {
+    font-size: 1.5em;
+  }
+
+  @include phones {
+    font-size: 2em;
+  }
 }
 
 .book__month {
   font-weight: 600;
+  font-size: 2em;
+
+  @include desktop {
+    font-size: 1em;
+    line-height: 18px;
+  }
+
+  @include tablets {
+    font-size: 1em;
+  }
 }
 
 .book__field-head {
-  font-size: 10px;
+  font-size: 1em;
+
+  @include desktop {
+    font-size: 0.8em;
+  }
+
+  @include phones {
+    font-size: 1em;
+  }
 }
 
 
@@ -135,13 +173,33 @@
   border: none;
   background: none;
   color: #d31c1c;
+  font-size: 1.5em;
+
+  @include desktop {
+    font-size: 1em;
+  }
+
+  @include phones {
+    font-size: 1.4em;
+  }
 
   &:focus {
     outline: none;
   }
+
+  &>option {
+    font-size: 16px;
+  }
 }
 
 .book__price-count {
+  font-size: 2.5em;
+  font-weight: 600;
+
+  @include desktop {
+    font-size: 1.5em;
+  }
+
   &:after {
     content: 'р';
   }
