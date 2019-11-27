@@ -74,7 +74,9 @@ section.calendar
             .book__date
               h3.book__day #{bookdate.date}
               h4.book__month #{bookdate.month}
-            button.btn.btn--book Подробнее
+            button(
+              data="about"
+            ).btn.btn--book Подробнее
           .book__row
             label.book__field
               h5.book__field-head Спектакль
@@ -96,7 +98,9 @@ section.calendar
           .book__row
             .book__price
               h2.book__price-count 2500
-            button.btn.btn--book Забронировать
+            button(
+              data="send"
+            ).btn.btn--book Забронировать
     .booking
       .booking__send
       .booking__about
