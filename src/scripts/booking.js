@@ -6,12 +6,35 @@ const screenAbout = document.querySelector('.booking__about');
 const aboutSliderRight = screenAbout.querySelector('.slider-buttons__button-right');
 const aboutSliderLeft = screenAbout.querySelector('.slider-buttons__button-left');
 const aboutSliderButtons = screenAbout.querySelectorAll('.slider-buttons__button');
+const bookOnHoverForm = document.querySelectorAll('.book');
+const bookCart = [];
+var arrBookFormSelectOption = []
+var option = '';
+
+// function selectedBookingField() {
+  // if (option.selected = true) {
+function selectedBookingField() {
+  // option[selected] !== true;
+  };
+  
+// return 
 
 
 
-// console.log(aboutSliderRight);
+for (var bookForms = 0; bookForms < bookOnHoverForm.length; bookForms++) {
+  var bookForm = bookOnHoverForm[bookForms];
+  var bookFormSelects = bookForm.getElementsByTagName('select');
+  for (var bookSelectFields = 0; bookSelectFields < bookFormSelects.length; bookSelectFields++) {
+    var bookFormSelect = bookFormSelects[bookSelectFields];
+    let arrBookFormSelectOptions = Array.from(bookFormSelect.options);
+    var selectedOptionValueFilter = arrBookFormSelectOptions.filter(option.selected == 'true');
+    // var selectValue = arrBookFormSelectOption.text;
+    bookFormSelect.addEventListener('change', function() {
+      console.log(selectedOptionValueFilter);
+    });
+  };
+}; 
 
-// function screenBooking(screenType) {
 
 for (i = 0; i < btnsBook.length; i++) {
 btnsBook[i].addEventListener('click', function() {
@@ -27,7 +50,7 @@ selectedScreen.classList.add(screenToOpen);
 };
 
 for (i = 0; i < closeBook.length; i++) {
-closeBook[i].addEventListener('click', function (event) {
+closeBook[i].addEventListener('click', function () {
   document.body.classList.remove("stop-scrolling");
 
   messageBook.classList.remove("booking--active");
@@ -45,8 +68,7 @@ for (i = 0; i < aboutSliderButtons.length; i++) {
     var slidesAbout = screenAbout.querySelectorAll('.about-slides__item');
     if (sliderAboutDirection === 'right') {
       var otherSliderAboutDirectionClass = '.slider-buttons__button' + '-left';      
-      var otherSliderAboutButton = screenAbout.querySelector(otherSliderAboutDirectionClass); 
-      console.log(slidesAbout);
+      var otherSliderAboutButton = screenAbout.querySelector(otherSliderAboutDirectionClass);
       for (var slides = 0; slides < slidesAbout.length; slides++) {
         var moveForvardAbout = '-100%';
         slidesAbout[slides].style.left = moveForvardAbout;
@@ -61,19 +83,5 @@ for (i = 0; i < aboutSliderButtons.length; i++) {
     };
     usedAboutSliderButton.classList.add('slider-buttons__button--inactive');
     otherSliderAboutButton.classList.remove('slider-buttons__button--inactive');
-      // usedAboutSliderButton.classList.remove('slider-buttons__button--inactive');
-      // // otherSliderAboutDirectionClass = '.slider-buttons__button' + sliderAboutDirection;
-      // // otherSliderAboutButton = screenAbout.querySelector(otherSliderAboutDirectionClass);
-      // // otherSliderAboutButton.classList.remove('slider-buttons__button--inactive');
-      // // usedAboutSliderButton.classList.add('slider-buttons__button--inactive');
-      // console.log(sliderAboutDirection + 'other');
-    // console.log(sliderAboutDirection);
-// otherSliderAboutButton.classList.remove('slider-buttons__button--inactive');
-      // usedAboutSliderButton.classList.add('slider-buttons__button--inactive');
-      // screenAbout.querySelector('.about-slides__item').setAttribute('left', '-100');
   });
-
-
 };
-// aboutSliderRight.addEventListener('click', )
-// screenBooking(btnsBook[i].getAttribute('data'))
