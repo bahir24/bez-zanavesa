@@ -94,16 +94,19 @@ section.calendar
           .book__row
             label.book__field
               h5.book__field-head Промокод
-              input(placeholder="Введите сюда промокод").book__field-input
+              input(placeholder="Введите сюда промокод").book__field-input.booking__promocode
           .book__row
             .book__price
-              h2.book__price-count 2500
+              h2.book__price-count ЦЕНА
             button(
               data="send"
             ).btn.btn--book Забронировать
     .booking
       .booking__send
         .booking__close
+        .booking__close-head Вы бронируете:
+        
+
       .booking__about
         .booking__close
         ul.slider-buttons

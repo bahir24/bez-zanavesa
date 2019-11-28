@@ -7,13 +7,8 @@ const aboutSliderRight = screenAbout.querySelector('.slider-buttons__button-righ
 const aboutSliderLeft = screenAbout.querySelector('.slider-buttons__button-left');
 const aboutSliderButtons = screenAbout.querySelectorAll('.slider-buttons__button');
 const bookOnHoverForm = document.querySelectorAll('.book');
-var promocodeInput = [];
-for (var promocodeBookInputIndex = 0; promocodeBookInputIndex < bookOnHoverForm.length; promocodeBookInputIndex) {
-  promocodeInput[promocodeBookInputIndex] = bookOnHoverForm.getElementsByTagName('input');
-};
-console.log(promocodeInput);
-// const inputBookPromocode = bookOnHoverForm.querySelectorAll('');
-// var bookCart = [];
+const inputPromoCodes = document.querySelectorAll('.booking__promocode');
+var bookCart = [];
 
 function priceCountBooking() {
   let bookPrice = 0;
@@ -21,9 +16,8 @@ function priceCountBooking() {
     bookPrice = 15000;
   } else {
     if (bookCart[0] === 'Рождественское чудо') {
-      bookPrice = 12000;
-      
-      }
+      bookPrice = 12000;      
+      };
   };
   if (bookCart[1] === 'Народные игры' || bookCart[1] === 'Дед мороз и снегурочка') {
     bookPrice = bookPrice + 3000;
@@ -37,26 +31,30 @@ function priceCountBooking() {
 for (var bookForms = 0; bookForms < bookOnHoverForm.length; bookForms++) {
   var bookForm = bookOnHoverForm[bookForms];
   var bookFormSelects = bookForm.getElementsByTagName('select');
-  var inputPromoCodes = bookForm.getElementsByTagName('input');
   for (let bookSelectFields = 0; bookSelectFields < bookFormSelects.length; bookSelectFields++) {
     var bookFormSelect = bookFormSelects[bookSelectFields];
     bookFormSelect.addEventListener('change', function() {
+      if (bookCart[3] !== '' && bookCart[4] !== '') {
+        bookCart[3] = this.parentNode.parentNode.parentNode.querySelector('.book__day').textContent;
+        bookCart[4] = this.parentNode.parentNode.parentNode.querySelector('.book__month').textContent;
+      };
       bookCart[bookSelectFields] = this.value;
       priceCountBooking();
+      this.parentNode.parentNode.parentNode.querySelector('.book__price-count').textContent = bookCart[10];
+      console.log(bookCart);
     });
   };
-  // var inputPromoCode = inputPromoCodes[bookForms];
-  
-  // let bookPromoCode = bookPromoCodes[bookForms]
-  // bookPromoCode.addEventListener('keydown', function() {
-    // bookCart[2] = bookPromocode.value;
-    // priceCountBooking();
-  // console.log(inputPromoCodes);    
-  // });
+  inputPromoCodes[bookForms].addEventListener('keyup', function () {
+    if (bookCart[3] !== '' && bookCart[4] !== '') {
+    bookCart[3] = this.parentNode.parentNode.parentNode.querySelector('.book__day').textContent;
+    bookCart[4] = this.parentNode.parentNode.parentNode.querySelector('.book__month').textContent;
+    };
+    bookCart[2] = this.value;
+    priceCountBooking();
+    this.parentNode.parentNode.nextElementSibling.querySelector('.book__price-count').textContent = bookCart[10];
+    console.log(bookCart);
+  });
 };
-
-// for (var bookPromocode = 0; bookPromocode )
-
 
 for (i = 0; i < btnsBook.length; i++) {
 btnsBook[i].addEventListener('click', function() {
