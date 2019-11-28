@@ -3,13 +3,18 @@ const messageBook = document.querySelector('.booking');
 const closeBook = document.querySelectorAll('.booking__close');
 const screenSend = document.querySelector('.booking__send');
 const screenAbout = document.querySelector('.booking__about');
+const aboutSliderRight = screenAbout.querySelector('.slider-buttons__button-right');
+const aboutSliderLeft = screenAbout.querySelector('.slider-buttons__button-left');
+const aboutSliderButtons = screenAbout.querySelectorAll('.slider-buttons__button');
 
 
+
+// console.log(aboutSliderRight);
 
 // function screenBooking(screenType) {
 
 for (i = 0; i < btnsBook.length; i++) {
-btnsBook[i].addEventListener('click', function(event) {
+btnsBook[i].addEventListener('click', function() {
 let screenType = this.getAttribute('data');
 let selectorName = '.booking__' + screenType;
 let screenToOpen = 'booking__' + screenType + '--active';
@@ -32,4 +37,43 @@ closeBook[i].addEventListener('click', function (event) {
 
 });
 };
+
+for (i = 0; i < aboutSliderButtons.length; i++) {
+  aboutSliderButtons[i].addEventListener('click', function() {
+  usedAboutSliderButton = this;
+    sliderAboutDirection = this.getAttribute('data');
+    var slidesAbout = screenAbout.querySelectorAll('.about-slides__item');
+    if (sliderAboutDirection === 'right') {
+      var otherSliderAboutDirectionClass = '.slider-buttons__button' + '-left';      
+      var otherSliderAboutButton = screenAbout.querySelector(otherSliderAboutDirectionClass); 
+      console.log(slidesAbout);
+      for (var slides = 0; slides < slidesAbout.length; slides++) {
+        var moveForvardAbout = '-100%';
+        slidesAbout[slides].style.left = moveForvardAbout;
+      }
+    } else {
+      otherSliderAboutDirectionClass = '.slider-buttons__button' + '-right';
+      var otherSliderAboutButton = screenAbout.querySelector(otherSliderAboutDirectionClass);
+      for (slides = 0; slides < slidesAbout.length; slides++) {
+        slidesAbout[slides].style.left = 0;
+      };
+      
+    };
+    usedAboutSliderButton.classList.add('slider-buttons__button--inactive');
+    otherSliderAboutButton.classList.remove('slider-buttons__button--inactive');
+      // usedAboutSliderButton.classList.remove('slider-buttons__button--inactive');
+      // // otherSliderAboutDirectionClass = '.slider-buttons__button' + sliderAboutDirection;
+      // // otherSliderAboutButton = screenAbout.querySelector(otherSliderAboutDirectionClass);
+      // // otherSliderAboutButton.classList.remove('slider-buttons__button--inactive');
+      // // usedAboutSliderButton.classList.add('slider-buttons__button--inactive');
+      // console.log(sliderAboutDirection + 'other');
+    // console.log(sliderAboutDirection);
+// otherSliderAboutButton.classList.remove('slider-buttons__button--inactive');
+      // usedAboutSliderButton.classList.add('slider-buttons__button--inactive');
+      // screenAbout.querySelector('.about-slides__item').setAttribute('left', '-100');
+  });
+
+
+};
+// aboutSliderRight.addEventListener('click', )
 // screenBooking(btnsBook[i].getAttribute('data'))
