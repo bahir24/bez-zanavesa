@@ -7,33 +7,55 @@ const aboutSliderRight = screenAbout.querySelector('.slider-buttons__button-righ
 const aboutSliderLeft = screenAbout.querySelector('.slider-buttons__button-left');
 const aboutSliderButtons = screenAbout.querySelectorAll('.slider-buttons__button');
 const bookOnHoverForm = document.querySelectorAll('.book');
-const bookCart = [];
-var arrBookFormSelectOption = []
-var option = '';
+var promocodeInput = [];
+for (var promocodeBookInputIndex = 0; promocodeBookInputIndex < bookOnHoverForm.length; promocodeBookInputIndex) {
+  promocodeInput[promocodeBookInputIndex] = bookOnHoverForm.getElementsByTagName('input');
+};
+console.log(promocodeInput);
+// const inputBookPromocode = bookOnHoverForm.querySelectorAll('');
+// var bookCart = [];
 
-// function selectedBookingField() {
-  // if (option.selected = true) {
-function selectedBookingField() {
-  // option[selected] !== true;
+function priceCountBooking() {
+  let bookPrice = 0;
+  if (bookCart[0] === 'Сказки Шаляпина') {
+    bookPrice = 15000;
+  } else {
+    if (bookCart[0] === 'Рождественское чудо') {
+      bookPrice = 12000;
+      
+      }
   };
-  
-// return 
-
-
+  if (bookCart[1] === 'Народные игры' || bookCart[1] === 'Дед мороз и снегурочка') {
+    bookPrice = bookPrice + 3000;
+  };
+  if (bookCart[2] === 'KVARTIRNIK') {
+    bookPrice = bookPrice - 3000;
+  };    
+  bookCart[10] = bookPrice;
+};
 
 for (var bookForms = 0; bookForms < bookOnHoverForm.length; bookForms++) {
   var bookForm = bookOnHoverForm[bookForms];
   var bookFormSelects = bookForm.getElementsByTagName('select');
-  for (var bookSelectFields = 0; bookSelectFields < bookFormSelects.length; bookSelectFields++) {
+  var inputPromoCodes = bookForm.getElementsByTagName('input');
+  for (let bookSelectFields = 0; bookSelectFields < bookFormSelects.length; bookSelectFields++) {
     var bookFormSelect = bookFormSelects[bookSelectFields];
-    let arrBookFormSelectOptions = Array.from(bookFormSelect.options);
-    var selectedOptionValueFilter = arrBookFormSelectOptions.filter(option.selected == 'true');
-    // var selectValue = arrBookFormSelectOption.text;
     bookFormSelect.addEventListener('change', function() {
-      console.log(selectedOptionValueFilter);
+      bookCart[bookSelectFields] = this.value;
+      priceCountBooking();
     });
   };
-}; 
+  // var inputPromoCode = inputPromoCodes[bookForms];
+  
+  // let bookPromoCode = bookPromoCodes[bookForms]
+  // bookPromoCode.addEventListener('keydown', function() {
+    // bookCart[2] = bookPromocode.value;
+    // priceCountBooking();
+  // console.log(inputPromoCodes);    
+  // });
+};
+
+// for (var bookPromocode = 0; bookPromocode )
 
 
 for (i = 0; i < btnsBook.length; i++) {
