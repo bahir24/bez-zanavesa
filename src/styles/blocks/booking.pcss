@@ -1,5 +1,8 @@
 .booking {
   position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   top: 0;
   bottom: 0;
   left: 0;
@@ -23,12 +26,10 @@
 .booking__about,
 .booking__send {
   position: relative;
-  margin: auto;
-  top: 50%;
-  transform: translateY(-50%);
   width: 0%;
   height: 0%;
   background: rgb(255, 255, 255);
+  padding: 0;
   opacity: 0;
   transition-property: opacity, width, height;
   transition-duration: 1s;
@@ -38,11 +39,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  padding: 5%;
 
-  @include desktop {
-    padding: 2%;
-  }
 }
 
 .booking__send-head {
@@ -124,9 +121,18 @@
 
 
 .booking__send--active {
+
+  padding: 5%;
+
+
+
   opacity: 1;
   width: 50%;
   height: 60%;
+
+  @include desktop {
+    padding: 2%;
+  }
 
   @include desktop {
     height: 80%;
