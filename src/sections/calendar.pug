@@ -89,8 +89,8 @@ section.calendar
               h5.book__field-head Дополнительные услуги
               select.book__field-input
                 option Выберете дополнительную услугу
-                option Народные игры
-                option Дед мороз и снегурочка
+                option народные игры
+                option дед мороз со снегурочкой
           .book__row
             label.book__field
               h5.book__field-head Промокод
@@ -104,9 +104,29 @@ section.calendar
     .booking
       .booking__send
         .booking__close
-        .booking__close-head Вы бронируете:
-        
-
+        .booking__send-head Вы бронируете:
+        p.booking__send-text Спектакль 
+          span.booking__send-1
+          span.booking__send-2
+          |на 
+          span.booking__send-3
+          span.booking__send-4
+          br
+          |предварительная стоимость: 
+          span.booking__send-5
+        h4.booking__send-contacts Напишите Ваш номер телефона или e-mail
+        .booking__send-row          
+          label.booking__send-field
+            h3.booking__send-field--head Телефон
+            input.booking__send-field--input
+        .booking__send-row          
+          label.booking__send-field
+            h3.booking__send-field--head Электронная почта
+            input.booking__send-field--input
+        h4.booking__send-contacts Наш менеджер свяжется с вами в ближайшее время
+        .booking__send-row.booking__send-row--last
+          p.send-message__response
+          button.btn.btn--book Отправить
       .booking__about
         .booking__close
         ul.slider-buttons
