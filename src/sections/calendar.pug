@@ -69,7 +69,9 @@ section.calendar
           }
         ]
       each bookdate in bookdates
-        li.book
+        li(
+          onclick=""
+        ).book
           .book__row.book__row--first
             .book__date
               h3.book__day #{bookdate.date}

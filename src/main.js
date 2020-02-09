@@ -7,4 +7,6 @@ import "./scripts/slider";
 import './scripts/feedback';
 import './scripts/screen-menu';
 import './scripts/up';
-import "./scripts/booking";
+// import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'bootstrap';
+// import "./scripts/booking";

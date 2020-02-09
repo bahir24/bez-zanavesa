@@ -7,37 +7,17 @@ section.poster
                 - 
                   var events= [ 
                     {
-                        date: '17 ноября, воскресенье 13:00',                        
-                        name: '"БИБА. Про Сашу Блока"',
-                        age: '5+',
-                        place: 'Музей-квартира А.А.Блока»',
-                        adress: 'ул. Декабристов, д. 57',                        
+                        date: '18 января, суббота 17:00',                        
+                        name: '"Рождественское чудо"',
+                        age: '3+',
+                        place: '"Чудетство" Книжный магазин-клуб',
+                        adress: 'Кузнечный переулок, д. 13',                        
                         call: true,
-                        ticket_cloud_event: '5dc26cb307fca0e583cd5ef6',
-                        ticket_cloud_token: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsImlzcyI6InRpY2tldHNjbG91ZC5ydSJ9.eyJwIjoiNWQ5ZGI1ZDU3Yzc4MGZkZGJjZDYxYjk0In0.egM4gU8Mx7yeMFvr6qYcvlwQWdmYtg3dxeFdAxNZAh8',
-                        about: 'https://vk.com/topic-22116444_24057143',
-                        pic: 'biba'
-                    },{
-                        date: '24 ноября, воскресенье 12:00',                        
-                        name: '"Игра в прятки"',
-                        age: '4+',
-                        place: 'Детский Интеграционный Театр "Куклы"',
-                        adress: 'ул. Жака Дюкло, д. 6, корп. 1',                        
-                        call: true,
-                        number: '79119254863',
-                        about: 'https://vk.com/topic-22116444_32329889',
-                        pic: 'pryatki'
-                    },{
-                        date: '24 ноября, воскресенье 14:00',
-                        name: '"Игра в прятки"',
-                        age: '4+',
-                        place: 'Детский Интеграционный Театр "Куклы"',
-                        adress: 'ул. Жака Дюкло, д. 6, корп. 1',                        
-                        call: true,
-                        number: '79119254863',
-                        about: 'https://vk.com/topic-22116444_32329889',
-                        pic: 'pryatki'
-                    }                    
+                        ticket_cloud_event: '5dc26cb307fca0e583cd5ef6',                        
+                        about: 'https://vk.com/bezzanavesa',
+                        number: '+7',
+                        pic: 'chudo'
+                    }                  
                   ]
                 each event in events                    
                   li.perfomances__item
@@ -55,8 +35,9 @@ section.poster
                     .perfomances__button
                       if event.number
                         a(
-                          href=`tel: + ${event.number}`                          
-                        ).btn.btn--width Купить билет                           
+                          href="https://vk.com/chudetstvobooks?w=wall-143386107_5859"
+                          target="_blank"
+                        ).btn.btn--width Купить билет                                        
                       else
                         a(
                           data-tc-event=`${event.ticket_cloud_event}`
@@ -67,4 +48,4 @@ section.poster
                       a(
                       href=`${event.about}`
                       target="_blank"
-                      ).btn.btn--width Подробнее
+                      ).btn.btn--width Подробнее                      
