@@ -1,0 +1,35 @@
+nav.screen-menu
+              .close                
+                a.close__link
+                  .close__link-dagger
+              .logo.logo--screen
+                +image('logo/logo.png', logo-pic)
+              ul.screen-menu__list
+                - 
+                  var items= [ 
+                    {
+                        name: 'о театре',
+                        link: '#about'
+                    },{
+                        name: 'афиша',
+                        link: '#poster'
+                    },{
+                        name: 'репертуар',
+                        link: '#repertoire'
+                    },{
+                        name: 'труппа театра',
+                        link: '#team'
+                    },{
+                        name: 'отзывы',
+                        link: '#reviews'
+                    },{
+                        name: 'контакты',
+                        link: '#contacts'
+                    },{
+                        name: 'заказать звонок',
+                        link: '#call'
+                    }
+                  ]
+                each item in items                       
+                  li.screen-menu__item
+                    a(href=`${item.link}`).screen-menu__link #{item.name}
