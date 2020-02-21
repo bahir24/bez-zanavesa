@@ -1,5 +1,4 @@
 .footer {
-  height: 30vh;
   background-color: #000;
 }
 
@@ -9,25 +8,14 @@
   justify-content: space-between;
 }
 
-.footer__col-left,
 .footer__col-right {
-  display: inline-flex;
-  height: 100%;
+  display: flex;
   align-items: center;
-}
-
-.footer__col-right {
-  width: 30%;
-
-  @include desktop {
-    width: 10%;
-  }
-
-  @include phones {
-    display: none;
-  }
+  max-width: 30%;
 }
 
 .footer__col-left {
-  flex: 1;
+  @include tablets {
+    margin: 0;
+  }
 }

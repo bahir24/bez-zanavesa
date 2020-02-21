@@ -1,0 +1,208 @@
+.booking {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  z-index: 1;
+  width: 0%;
+  height: 0%;
+  background: rgba(0, 0, 0, 0);
+  transition-property: background, width, height;
+  transition-duration: 1s;
+
+  &--active {
+    z-index: 15;
+    background: rgba(0, 0, 0, .5);
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.booking__about,
+.booking__send {
+  position: relative;
+  width: 0%;
+  height: 0%;
+  background: rgb(255, 255, 255);
+  padding: 0;
+  opacity: 0;
+  transition-property: opacity, width, height;
+  transition-duration: 1s;
+}
+
+.booking__send {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+}
+
+.booking__send-head {
+  font-size: 2em;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.booking__send-text {
+  font-size: 2em;
+  font-weight: 600;
+
+  @include desktop {
+    font-size: 1em;
+  }
+
+  @include phones {
+    font-size: 1.5em;
+  }
+}
+
+.booking__send-1,
+.booking__send-2,
+.booking__send-3,
+.booking__send-4,
+.booking__send-5 {
+  color: #d31c1c;
+  font-weight: 800;
+}
+
+
+.booking__send-row {
+  width: 100%;
+
+  &--last {
+    display: flex;
+    justify-content: flex-end;
+    min-height: 40px;
+  }
+}
+
+.booking__send-contacts {
+  margin-bottom: 20px;
+
+  @include desktop {
+    margin-bottom: 10px;
+  }
+
+  @include phones {
+    font-size: 1.5em;
+  }
+}
+
+
+.booking__send-field--head {
+  color: #d31c1c;
+  margin-bottom: 10px;
+
+  @include desktop {
+    margin-bottom: 0;
+    font-size: 1em;
+  }
+}
+
+.booking__send-field--input {
+  font-size: 1.5em;
+  border: 1px solid #d31c1c;
+  margin-bottom: 10px;
+
+  @include desktop {
+    margin-bottom: 5px;
+    font-size: 1em;
+  }
+
+  @include phones {
+    font-size: 1.5em;
+  }
+}
+
+
+.booking__send--active {
+
+  padding: 5%;
+
+
+
+  opacity: 1;
+  width: 50%;
+  height: 60%;
+
+  @include desktop {
+    padding: 2%;
+  }
+
+  @include desktop {
+    height: 80%;
+    width: 60%;
+  }
+
+  @include tablets {
+    height: 80%;
+    width: 70%;
+  }
+
+  @include phones {
+    height: 80%;
+    width: 90%;
+  }
+}
+
+.booking__about--active {
+  opacity: 1;
+  width: 90%;
+  height: 90%;
+}
+
+.booking__close {
+  background: rgba(255, 255, 255, 0.4);
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  right: 0;
+  transform: translate(50%, -50%);
+  z-index: 1;
+
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 1px solid #d31c1c;
+  transition-property: background;
+  transition-duration: 1s;
+
+
+  &:hover {
+    background: rgba(255, 255, 255, .8);
+  }
+
+  &:before,
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+
+    width: 5%;
+    height: 80%;
+    background: #d31c1c;
+  }
+
+  &:before {
+    transform: rotate(45deg);
+  }
+
+  &:after {
+    transform: rotate(-45deg);
+
+  }
+}
+
+.send-message__response {
+  // align-self: flex-start;
+  margin-right: auto;
+  color: #d31c1c;
+
+}

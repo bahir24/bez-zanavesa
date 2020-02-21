@@ -1,0 +1,155 @@
+.about-slide {
+  position: absolute;
+  white-space: normal;
+  width: 100%;
+  height: 100%;
+
+  padding: 4%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.about-slide__main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+}
+
+
+.about-slide__header,
+.about-slide__head,
+.about-slide__description {
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.about-slide__header {
+  font-size: 2em;
+
+  @include desktop {
+    // line-height: 50px;
+    font-size: 1.5em;
+  }
+}
+
+.about-slide__head {
+  line-height: 70px;
+  font-size: 4em;
+  color: #d31c1c;
+  font-weight: 900;
+
+  @include desktop {
+    line-height: 30px;
+    font-size: 2em;
+  }
+}
+
+
+
+.about-slide__description {
+  font-size: 2em;
+  color: #fff;
+  font-weight: 600;
+}
+
+.about-slide__stages {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  // align-items: center;
+
+  @include tablets {
+    flex-direction: column;
+  }
+}
+
+.about-slide__stage {
+  display: block;
+  width: 25%;
+  height: 100%;
+  text-align: center;
+
+  @include tablets {
+    width: 100%;
+
+    @include desktop {
+      font-size: 1em;
+    }
+  }
+}
+
+.about-slide__stage-time {
+  font-size: 2em;
+}
+
+.about-slide__stage-text {
+  overflow: hidden;
+  font-size: 2em;
+  color: #d31c1c;
+  font-weight: 800;
+
+  @include desktop {
+    font-size: 1em;
+  }
+}
+
+.about-slide__second {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+
+  @include phones {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+  }
+}
+
+.about-slide__second-text {
+  width: 40%;
+  height: initial;
+  font-size: 1.2em;
+  font-weight: 600;
+
+  @include desktop {
+    width: 45%;
+    font-size: .7em;
+  }
+
+  @include tablets {
+    font-size: .7em;
+    width: 50%;
+  }
+
+  @include phones {
+    width: 100%;
+    font-size: .9em;
+  }
+}
+
+.about-slide__second-text:nth-child(1) {
+  color: red;
+  transform: rotate(4deg);
+}
+
+.about-slide__second-text:nth-child(2) {
+  color: green;
+  transform: rotate(-7deg);
+}
+
+.about-slide__second-text:nth-child(3) {
+  color: rgb(255, 255, 0);
+  transform: rotate(2deg);
+
+}
+
+.about-slide__second-text:nth-child(4) {
+  color: blue;
+  transform: rotate(-5deg);
+}

@@ -1,8 +1,9 @@
 .actor {
-  // display: flex;
+  position: relative;
 }
 
 .actor__avatar {
+  
   width: 100%;
   height: 350px;
   margin-bottom: 20px;
@@ -14,20 +15,49 @@
   object-fit: cover;
 }
 
+// .actor__description {
+  
+//   padding: 0 2%;
+// }
+
 .actor__description-name {
   font-size: 22px;
   font-weight: 700;
+  
+  padding: 0 2%;
   color: #000;
   margin-bottom: 5px;
 }
 
 .actor__description-position {
   font-size: 14px;
+  padding: 0 2%;
   color: #7a7a7a;
   margin-bottom: 18px;
 }
 
+.actor__description-about {
+  height: 3em;
+}
+
 .actor__description-text {
-  font-size: 15px;
+  width: 100%;
+  position: absolute;
+  z-index: 10;
+  background: #fff;
+  max-height: 3em;
+  font-size: 1em;
   color: #000;
+  overflow: hidden;
+  transition: max-height 1s;
+
+  @include phones {
+    font-size: 1.4em;    
+    padding: 0 2%;
+  }
+
+  &:hover {
+    max-height: 40em;
+    padding-bottom: 20px;
+  }
 }

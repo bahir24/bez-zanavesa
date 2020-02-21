@@ -1,6 +1,6 @@
 section.video
           .container
-            h2.section-head Видео со спектаклей
+            h2.section-head Видео спектаклей
             .event-video
               ul.event-video__list
                 - 
@@ -8,7 +8,7 @@ section.video
                     {
                         name: '"Крошечка-Хаврошечка" (5+)',
                         description: '- это кукольный спектакль по мотивам русской народной сказки, в котором классическая старинная музыка соединяется с народной, а традиционные тряпичные куклы с профессиональными. На старом колесе от прялки, совершенно без слов, артисты разыгрывают историю маленькой сироты и вместе с ангелом-хранителем ведут ее к счастливому финалу.',
-                        link: 'https://www.youtube.com/embed/b80qYS11iZ4',
+                        link: 'https://www.youtube.com/embed/6-tfQV87zkY',
                     },{
                         name: '"Игра в прятки" (4+)',
                         description: '- Кукольный спектакль "Игра в прятки"- это музыкальное представление с веселыми песенками по мотивам сказок английского писателя Дональда Биссета "Муравей и сахар", "Под ковром", "Игра в прятки" и других. Девочка Шейла не любит скучать, она придумывает себе сказочных друзей и начинает с ними играть, а они открывают ей волшебную страну, полную выдумок и чудес.',
@@ -22,8 +22,11 @@ section.video
                 each event in events                    
                   li.event-video__item                    
                     .trailer
-                      .trailer__description
+                      .trailer__left
                         h3.trailer__description-head #{event.name}
-                        p.trailer-description-text #{event.description}
-                      .trailer__video
-                        iframe(class="trailer__video-clip" src=`${event.link}` frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)
+                        iframe(class="trailer__video-clip" src=`${event.link}` frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)                        
+                      .trailer__right
+                        .trailer-description-about
+                          p(
+                            onclick=""
+                          ).trailer-description-text #{event.description}

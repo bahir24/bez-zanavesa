@@ -1,0 +1,143 @@
+section.calendar
+  .container
+    h2.section-head.section-head--book Бронирование выездных новогодних спектаклей
+    h3.section-subhead--book Стоимость "новогоднего квартирника" зависит от выбранного вами спектакля. Выберите желаемую дату, спектакль, дополнительную услугу и с администратор свяжется с вами в ближайшее время. Кстати, если у вас есть промокод - не забудьте ввести его.
+    .dates
+      ul.dates__list 
+        - 
+          var bookdates1= [ 
+            {
+                date: '21',
+                month: 'декабря'                
+            },{
+                date: '22',
+                month: 'декабря'                
+            },{
+                date: '25',
+                month: 'декабря'                
+            },{
+                date: '28',
+                month: 'декабря'                
+            },{
+                date: '29',
+                month: 'декабря'                
+            }
+          ]
+        each bookdate in bookdates1
+          li.book
+            h3.book__date #{bookdate.date}
+            h4.book__month #{bookdate.month}
+            .book__row
+              label.book__field
+                h5.book__field-head Спектакль
+                select.book__field-input
+                  option(value="" selected disabled) Выберете желаемый спектакль
+                  option Сказки Шаляпина
+                  option Рождественское чудо
+            .book__row
+              label.book__field
+                h5.book__field-head Дополнительные услуги
+                select.book__field-input
+                  option Выберете дополнительную услугу
+                  option Народные игры
+                  option Дед мороз и снегурочка
+            .book__row
+              label.book__field
+                h5.book__field-head Промокод
+                input(placeholder="Введите сюда промокод").book__field-input
+            .book__row
+              .book__price
+                h2.book__price-count 2500
+              button.btn.btn--book Забронировать
+      ul.dates__list 
+        - 
+          var bookdates2= [ 
+            {
+                date: '31',
+                month: 'декабря'                
+            },{
+                date: '1',
+                month: 'января'                
+            },{
+                date: '2',
+                month: 'января'                
+            },{
+                date: '3',
+                month: 'января'                
+            },{
+                date: '4',
+                month: 'января'                
+            }
+          ]
+        each bookdate in bookdates2
+          li.book
+            h3.book__date #{bookdate.date}
+            h4.book__month #{bookdate.month}
+            .book__row
+              label.book__field
+                h5.book__field-head Спектакль
+                select.book__field-input
+                  option Выберете желаемый спектакль
+                  option Сказки Шаляпина
+                  option Рождественское чудо
+            .book__row
+              label.book__field
+                h5.book__field-head Дополнительные услуги
+                select.book__field-input
+                  option Выберете дополнительную услугу
+                  option Народные игры
+                  option Дед мороз и снегурочка
+            .book__row
+              label.book__field
+                h5.book__field-head Промокод
+                input(placeholder="Введите сюда промокод").book__field-input
+            .book__row
+              .book__price
+                h2.book__price-count 2500
+              button.btn Забронировать
+      ul.dates__list 
+        - 
+          var bookdates3= [ 
+            {
+                date: '6',
+                month: 'января'                
+            },{
+                date: '7',
+                month: 'января'                
+            },{
+                date: '8',
+                month: 'января'                
+            },{
+                date: '11',
+                month: 'января'                
+            },{
+                date: '12',
+                month: 'января'                
+            }
+          ]
+        each bookdate in bookdates3
+          li.book
+            h3.book__date #{bookdate.date}
+            h4.book__month #{bookdate.month}
+            .book__row
+              label.book__field
+                h5.book__field-head Спектакль
+                select.book__field-input
+                  option Выберете желаемый спектакль
+                  option Сказки Шаляпина
+                  option Рождественское чудо
+            .book__row
+              label.book__field
+                h5.book__field-head Дополнительные услуги
+                select.book__field-input
+                  option Выберете дополнительную услугу
+                  option Народные игры
+                  option Дед мороз и снегурочка
+            .book__row
+              label.book__field
+                h5.book__field-head Промокод
+                input(placeholder="Введите сюда промокод").book__field-input
+            .book__row
+              .book__price
+                h2.book__price-count 2500
+              button.btn.btn--book Забронировать

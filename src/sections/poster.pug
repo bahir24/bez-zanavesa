@@ -1,30 +1,51 @@
 section.poster
           a(name="poster").anchor
           .container
-            h2.section-head Лето 2019
+            h2.section-head Афиша ноябрь 2019
             .perfomances
               ul.perfomances__list
                 - 
                   var events= [ 
                     {
-                        date: '29 июня, 19:00 (суббота)',
-                        name: '"Крошечка-Хаврошечка", 5+ (спектакль на Международном фестивале КУКART)',
-                        description: 'Нашему театру выпала честь выступить на крупнейшем фестивале кукольных театров "КУКART".Мы будем играть, пожалуй, самый лиричный, эмоционально насыщенныйспектакль из нашего репертуара, и самый необычный, потому что это спектакльбез слов - "Крошечку - Хаврошечку". Вариации на тему известного сюжета, переплетение классической и фольклорной музыки, завораживающая игра артистов, интересные режиссерские задумки. Он понятен детям и удивляет взрослых.',
-                        buy: 'https://teatr-bez-zanavesa.timepad.ru/event/982976/',
-                        about: 'https://vk.com/bezzanavesa'
-                    }
+                        date: '18 января, суббота 17:00',                        
+                        name: '"Рождественское чудо"',
+                        age: '3+',
+                        place: '"Чудетство" Книжный магазин-клуб',
+                        adress: 'Кузнечный переулок, д. 13',                        
+                        call: true,
+                        ticket_cloud_event: '5dc26cb307fca0e583cd5ef6',                        
+                        about: 'https://vk.com/bezzanavesa',
+                        number: '+7',
+                        pic: 'chudo'
+                    }                  
                   ]
                 each event in events                    
-                  li.perfomances__item 
-                    date.perfomances__item-date #{event.date}
-                    h2.perfomances__item-name #{event.name}                 
-                    p.perfomances__item-description #{event.description}
-                    .perfomances__item-buttons
+                  li.perfomances__item
+                    if event.pic != ''
+                      .poster__avatar
+                        +image(`poster/${event.pic}.jpg`, 'poster__avatar-image')
+                    .perfomances__date
+                      date.perfomances__date-num #{event.date}
+                      p.perfomances__date-dateadv #{event.dateadv}
+                    h2.perfomances__name #{event.name}
+                    .perfomances__other
+                      p.perfomances__other-age #{event.age} лет
+                      p.perfomances__other-place #{event.place}
+                      p.perfomances__other-adress #{event.adress}
+                    .perfomances__button
+                      if event.number
+                        a(
+                          href="https://vk.com/chudetstvobooks?w=wall-143386107_5859"
+                          target="_blank"
+                        ).btn.btn--width Купить билет                                        
+                      else
+                        a(
+                          data-tc-event=`${event.ticket_cloud_event}`
+                          data-tc-token=`${event.ticket_cloud_token}`
+                          href=`${event.buy}`
+                          target="_blank"
+                        ).btn.btn--width Купить билет
                       a(
-                        href=`${event.buy}`
-                        target="_blank"
-                      ).btn.btn--width Купить билет
-                      a(
-                        href=`${event.about}`
-                        target="_blank"
-                      ).btn.btn--width Подробнее
+                      href=`${event.about}`
+                      target="_blank"
+                      ).btn.btn--width Подробнее                      

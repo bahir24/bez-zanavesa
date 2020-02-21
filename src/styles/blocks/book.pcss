@@ -1,0 +1,238 @@
+.book {
+  position: absolute;
+  top: 0;
+  border: 1px solid #d31c1c;
+  width: 18%;
+  height: 20%;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #d31c1c;
+  background-color: rgba(255, 255, 255, 0.3);
+  padding: 10px;
+  transition: width 1s, height 1s, background-color .5s;
+
+  &:nth-child(n+6) {
+    top: 28%;
+  }
+
+  &:nth-child(n+11) {
+    top: unset;
+    bottom: 28%;
+  }
+
+  &:nth-child(n+16) {
+    top: unset;
+    bottom: 0;
+  }
+
+  &:nth-child(5n-4) {
+    left: 0%;
+  }
+
+  &:nth-child(5n-3) {
+    left: 25%;
+    transform: translateX(-25%);
+  }
+
+  &:nth-child(5n-2) {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  &:nth-child(5n-1) {
+    left: unset;
+    right: 25%;
+    transform: translateX(25%);
+  }
+
+  &:nth-child(5n) {
+    left: unset;
+    right: 0;
+  }
+
+  &:hover {
+
+    width: 500px;
+    height: 500px;
+    background-color: rgba(255, 255, 255, 1);
+    z-index: 10;
+    justify-content: space-around;
+
+    @include desktop {
+      width: 285px;
+      height: 200px;
+      padding: 5px;
+    }
+
+    @include tablets {
+      width: 220px;
+      height: 220px;
+    }
+
+    @include phones {
+      width: 270px;
+      height: 270px;
+    }
+
+  }
+
+  .book__row {
+    width: 200px;
+    height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: height 1s, width 1s, opacity 1s;
+
+    &--first {
+      display: flex;
+      justify-content: center;
+      opacity: 1;
+      height: unset;
+
+      .btn--book {
+        height: 0;
+        width: 0;
+        display: none;
+      }
+    }
+
+    &:last-child {
+      display: flex;
+      justify-content: space-between;
+
+      .book__field-input {
+        border: 1px solid #d31c1c;
+      }
+    }
+  }
+
+  &:hover>.book__row {
+    width: 450px;
+    opacity: 1;
+    height: 70px;
+
+    &--first {
+      width: 450px;
+      height: unset;
+      justify-content: space-between;
+
+      .btn--book {
+        height: 70px;
+        flex: .7;
+        display: block;
+      }
+    }
+
+    @include desktop {
+      width: 270px;
+      height: 50px;
+    }
+
+    @include tablets {
+      width: 210px;
+    }
+
+    @include phones {
+      width: 260px;
+    }
+
+    &:last-child {
+      height: unset;
+    }
+
+
+  }
+}
+
+
+
+.book__date {
+  text-align: center;
+}
+
+.book__day {
+  font-weight: 800;
+  font-size: 4em;
+  line-height: 50px;
+
+  @include desktop {
+    font-size: 1.5em;
+    line-height: 22px;
+  }
+
+  @include tablets {
+    font-size: 1.5em;
+  }
+
+  @include phones {
+    font-size: 2em;
+  }
+}
+
+.book__month {
+  font-weight: 600;
+  font-size: 2em;
+
+  @include desktop {
+    font-size: 1em;
+    line-height: 18px;
+  }
+
+  @include tablets {
+    font-size: 1em;
+  }
+}
+
+.book__field-head {
+  font-size: 1em;
+
+  @include desktop {
+    font-size: 0.8em;
+  }
+
+  @include phones {
+    font-size: 1em;
+  }
+}
+
+
+
+.book__field-input {
+  width: 100%;
+  border: none;
+  background: none;
+  color: #d31c1c;
+  font-size: 1.5em;
+
+  @include desktop {
+    font-size: 1em;
+  }
+
+  @include phones {
+    font-size: 1.4em;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &>option {
+    font-size: 16px;
+  }
+}
+
+.book__price-count {
+  font-size: 2.5em;
+  font-weight: 600;
+
+  @include desktop {
+    font-size: 1.5em;
+  }
+
+  &:after {
+    content: 'р';
+  }
+}

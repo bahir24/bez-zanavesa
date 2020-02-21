@@ -1,5 +1,7 @@
 .trailer {
   display: flex;
+  position: relative;
+
   @include tablets {
     flex-direction: column;
   }
@@ -7,29 +9,98 @@
 
 
 
-.trailer__description,
-.trailer__video {
+.trailer__right,
+.trailer__left {
   width: 50%;
   padding: 2%;
+
   @include tablets {
     width: 100%;
+    padding: 0;
   }
 }
+
+.trailer__right {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
 
 .trailer__description-head {
   font-size: 20px;
   font-weight: 600;
   color: #000;
   margin-bottom: 20px;
+
+  @include tablets {
+    margin-bottom: 5px;
+  }
+}
+
+.trailer-description-about {
+  @include tablets {
+    width: 100%;
+    height: 4.5em;
+    overflow: hidden;
+  }
+
+  @include phones {
+    height: 4.5em;
+  }
 }
 
 .trailer-description-text {
+
   text-align: justify;
   font-size: 20px;
   line-height: 1.55;
+  padding: 0 2%;
+
+  @include tablets {
+    position: absolute;
+    line-height: unset;
+    max-height: 3em;
+    font-size: 15px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    z-index: 10;
+    background: #fff;
+
+    &:hover {
+      max-height: 100em;
+
+      @include phones {
+        max-height: unset;
+      }
+    }
+
+    &:active {
+      @include phones {
+        max-height: 100em;
+      }
+    }
+  }
+
+  @include phones {
+    font-size: 1.5em;
+    max-height: 3em;
+    transition: max-height 1s;
+    margin-bottom: 0;
+
+  }
 }
 
 .trailer__video-clip {
   width: 100%;
-  height: 45vh;
+  min-height: 350px;
+
+  @include tablets {
+    min-height: 400px;
+  }
+
+  @include phones {
+    min-height: 250px;
+  }
 }

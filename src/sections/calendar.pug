@@ -1,0 +1,177 @@
+section.calendar
+  .container.container--allheight.container--flexcol
+    .calendar__head
+      h2.section-head.section-head--book Бронирование выездных новогодних спектаклей
+      h3.section-subhead--book Стоимость "новогоднего квартирника" зависит от выбранного вами спектакля. Выберите желаемую дату, спектакль, дополнительную услугу и с администратор свяжется с вами в ближайшее время. Кстати, если у вас есть промокод - не забудьте ввести его.
+    ul.dates
+      - 
+        var bookdates= [ 
+          {
+              date: '21',
+              month: 'декабря'                
+          },{
+              date: '22',
+              month: 'декабря'                
+          },{
+              date: '23',
+              month: 'декабря'                
+          },{
+              date: '25',
+              month: 'декабря'                
+          },{
+              date: '26',
+              month: 'декабря'                
+          },{
+              date: '28',
+              month: 'декабря'                
+          },{
+              date: '29',
+              month: 'декабря'                
+          },{
+              date: '30',
+              month: 'декабря'                
+          },{
+              date: '31',
+              month: 'декабря'                
+          },{
+              date: '1',
+              month: 'января'                
+          },{
+              date: '2',
+              month: 'января'                
+          },{
+              date: '3',
+              month: 'января'                
+          },{
+              date: '4',
+              month: 'января'                
+          },{
+              date: '5',
+              month: 'января'                
+          },{
+              date: '6',
+              month: 'января'                
+          },{
+              date: '7',
+              month: 'января'                
+          },{
+              date: '8',
+              month: 'января'                
+          },{
+              date: '9',
+              month: 'января'                
+          },{
+              date: '11',
+              month: 'января'                
+          },{
+              date: '12',
+              month: 'января'                
+          }
+        ]
+      each bookdate in bookdates
+        li(
+          onclick=""
+        ).book
+          .book__row.book__row--first
+            .book__date
+              h3.book__day #{bookdate.date}
+              h4.book__month #{bookdate.month}
+            button(
+              data="about"
+            ).btn.btn--book Подробнее
+          .book__row
+            label.book__field
+              h5.book__field-head Спектакль
+              select.book__field-input
+                option(value="" selected disabled) Выберете желаемый спектакль
+                option Сказки Шаляпина
+                option Рождественское чудо
+          .book__row
+            label.book__field
+              h5.book__field-head Дополнительные услуги
+              select.book__field-input
+                option Выберете дополнительную услугу
+                option народные игры
+                option дед мороз со снегурочкой
+          .book__row
+            label.book__field
+              h5.book__field-head Промокод
+              input(placeholder="Введите сюда промокод").book__field-input.booking__promocode
+          .book__row
+            .book__price
+              h2.book__price-count ЦЕНА
+            button(
+              data="send"
+            ).btn.btn--book Забронировать
+    .booking
+      .booking__send
+        .booking__close
+        .booking__send-head Вы бронируете:
+        p.booking__send-text Спектакль 
+          span.booking__send-1
+          span.booking__send-2
+          |на 
+          span.booking__send-3
+          span.booking__send-4
+          br
+          |предварительная стоимость: 
+          span.booking__send-5
+        h4.booking__send-contacts Напишите Ваш номер телефона или e-mail
+        .booking__send-row          
+          label.booking__send-field
+            h3.booking__send-field--head Телефон
+            input.booking__send-field--input
+        .booking__send-row          
+          label.booking__send-field
+            h3.booking__send-field--head Электронная почта
+            input.booking__send-field--input
+        h4.booking__send-contacts Наш менеджер свяжется с вами в ближайшее время
+        .booking__send-row.booking__send-row--last
+          p.send-message__response
+          button.btn.btn--book Отправить
+      .booking__about
+        .booking__close
+        ul.slider-buttons
+          - 
+            var btns= ['left', 'right']
+          each btn in btns
+            if btn === 'left'
+              li(
+                class=`slider-buttons__button-${btn}`
+                class=`slider-buttons__button--inactive`
+                data=`${btn}`                
+                ).slider-buttons__button
+                a.slider-buttons__arrow
+            else
+              li(
+                class=`slider-buttons__button-${btn}`
+                data=`${btn}`              
+                ).slider-buttons__button
+                a.slider-buttons__arrow
+        ul.about-slides
+          li.about-slides__item
+            .about-slide
+              .about-slide__main
+                p.about-slide__header семейный формат встречи Нового года
+                h2.about-slide__head Новогодний квартирник
+                h3.about-slide__description В программе:
+              ul.about-slide__stages
+                li.about-slide__stage
+                  h4.about-slide__stage-time 45 мин
+                  p.about-slide__stage-text спектакль на ваш выбор: "Новогодние Сказки Шаляпина" или Рождественское чудо"
+                li.about-slide__stage
+                  h4.about-slide__stage-time 30 мин
+                  p.about-slide__stage-text Игровая программа с Дедом Морозом или Народные игры
+                li.about-slide__stage
+                  h4.about-slide__stage-time 15 мин
+                  p.about-slide__stage-text Фотоссесия, вручение подарков
+            //- +image(`about-slides/about-slide1.jpg`, 'about-slides__item-pic')
+          li.about-slides__item
+            .about-slide
+              ul.about-slide__second
+                li.about-slide__second-text «Театр без занавеса» подготовил уникальную программу: новогодний кукольный спектакль, с элементами интерактива, который будет интересно смотреть и детям, и взрослым...А после спектакля произойдет настоящее чудо: Дедушка Мороз со Снегурочкой подарят волшебство Вам и Вашим близким.
+                li.about-slide__second-text Праздник состоится там, где Вам удобно: квартира, загородный дом, кафе, арт-объект. У нас нет громоздких декораций; необходимо лишь небольшое место для импровизированной сцены, и установка "зрительного зала", которым может послужить стулья, диваны, подушки на полу, и прочие атрибуты комфортного время препровождения. Для нас главное, чтобы Вам было уютно!
+                li.about-slide__second-text Мы бережно отнесемся к Вашим пожеланиям и отметим каждого участника праздника! Как часто бывает, что после массовых праздников ребенок и родители остаются разочарованы: дети пугаются большого скопления людей, или не получают должного внимания от сказочных персонажей и любимого Дедушки Мороза. "Новогодний квартирник" - это веселый, активный праздник, но с близкими Вам людьми и профессиональными актерами.
+                li.about-slide__second-text Мы искренне верим, что семья - это главное! Поэтому предлагаем Вам позвать Ваших близких и друзей на "Новогодний квартирник" и подарить им настоящий праздник. И, быть может, Ваши дети вдохновятся и в будущем будут радовать Вашу семью своими кукольными представлениями!
+
+            //- +image(`about-slides/about-slide2.jpg`, 'about-slides__item-pic')

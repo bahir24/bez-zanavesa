@@ -2,10 +2,13 @@
   // height: 100%;
   text-align: center;
   margin-bottom: 5%;
+  position: relative;
+  overflow: hidden;
 
   @include tablets {
     margin-bottom: 10%;
   }
+
   @include phones {
     margin-bottom: 5px;
   }
@@ -20,8 +23,9 @@
   height: 100%;
 
   @include tablets {
-    margin-bottom: 30px;
+    margin-bottom: 50px;
   }
+
   @include phones {
     margin-bottom: 0;
   }
@@ -31,10 +35,42 @@
   list-style-type: none;
   width: 50%;
   margin-bottom: 20px;
+
+  &:last-child {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    opacity: 0;
+    height: 0px;
+    transition: 1s height;
+    width: 100%;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &--active:last-child {
+    opacity: 1;
+    height: 600px;
+  }
+
+  @include tablets {
+    width: 80%;
+  }
+
   @include phones {
-  margin-bottom: 10px;
+    margin-bottom: 10px;
   }
 }
+
+.form__sent-head {
+  font-size: 36px;
+  font-weight: 600;
+  margin-bottom: 40px;
+}
+
 
 .form__row-input {
   width: 100%;
@@ -47,6 +83,12 @@
     height: 33px;
     font-size: 16px;
   }
+}
+
+.error {
+  color: red;
+  text-align: left;
+  font-size: 12px;
 }
 
 .form__row-head {

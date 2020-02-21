@@ -5,14 +5,31 @@
   color: #000;
   text-transform: uppercase;
 
+  @include tablets {
+    font-size: 35px;
+    margin-bottom: 10px;
+  }
+
+  @include phones {
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 5px;
+  }
+
+  // &--reviews {
+  //   height: 10vh;
+  //   margin-bottom: 0;
+  // }
+
   &--feedback {
     text-align: center;
     margin-bottom: 20px;
     text-transform: none;
-    font-size: 40px;
+    // font-size: 40px;
 
     @include tablets {
-      margin-bottom: 100px;
+      font-size: 40px;
+      margin-bottom: 60px;
     }
   }
 
@@ -28,13 +45,25 @@
     text-align: center;
   }
 
-  @include tablets {
-    font-size: 35px;
-    margin-bottom: 10px;
-  }
+  &--book {
+    margin-bottom: 0;
+    color: #d31c1c;
 
-  @include phones {
-    font-size: 30px;
-    margin-bottom: 5px;
+    @include desktop {
+      font-size: 1.5em;
+    }
+
+    // @include tablets {
+    //   font-size: 1.5em;
+    // }
+
+    &+.section-subhead--book {
+      color: #d31c1c;
+
+      @include desktop {
+        font-size: 0.8em;
+      }
+
+    }
   }
 }
